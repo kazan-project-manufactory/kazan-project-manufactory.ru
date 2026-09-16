@@ -5,10 +5,8 @@
                                     keep /assets shared, rewrite internal links to stay inside
                                     the experiment, add a badge with a link back to the original
   python3 tools/exp.py index        rebuild exp/index.html from exp/REGISTRY.md
-  python3 tools/exp.py sync         pull the baseline site from the prod repo (git remote `upstream`)
-                                    into the root, leaving exp/, tools/, README, CNAME and robots alone
 """
-import html, re, shutil, subprocess, sys
+import html, re, shutil, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -86,20 +84,8 @@ def index():
     print(f'exp/index.html: {len(rows)} experiments')
 
 
-def sync():
-    """Copy the baseline pages from the prod repo into the root. Not a merge: prod deleted exp/ and
-    tools/exp.py, and merging that deletion would wipe the experiments."""
-    paths = ['index.html', 'styles.css', 'assets'] + [str(f.parent.name) for f in pages() if f.parent != ROOT]
-    subprocess.run(['git', 'fetch', 'upstream'], cwd=ROOT, check=True)
-    subprocess.run(['git', 'checkout', 'upstream/main', '--'] + paths, cwd=ROOT, check=True)
-    changed = subprocess.run(['git', 'status', '--porcelain'], cwd=ROOT, capture_output=True, text=True).stdout
-    print(f'synced from upstream/main: {len(paths)} paths')
-    print(changed or '(корень уже совпадает с продом)')
-
-
 if __name__ == '__main__':
     cmd = sys.argv[1:2]
     if cmd == ['new'] and len(sys.argv) == 3: new(sys.argv[2])
     elif cmd == ['index']: index()
-    elif cmd == ['sync']: sync()
     else: sys.exit(__doc__)

@@ -1,0 +1,2820 @@
+{
+ "slug": "ourfish",
+ "title": "Наша рыба",
+ "description": "Информационный портал о рыбной продукции",
+ "records": [
+  {
+   "rec": "rec1195741981",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "144",
+    "heightmode": "hug",
+    "padding": "20px 20px 16px 20px",
+    "flexdirection": "row",
+    "flexalignitems": "flex-start",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "68",
+    "padding": null
+   },
+   "bg": {
+    "position": "fixed",
+    "width": "100%",
+    "left": "0",
+    "top": "0",
+    "z-index": "990",
+    "height": "144px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "row",
+    "flex-wrap": "nowrap",
+    "align-items": "flex-start",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(20px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(16px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175396130020171640",
+     "flex": {
+      "flexdirection": "row",
+      "flexalignitems": "center",
+      "padding": "20px 24px 20px 40px",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "108",
+      "top": "20",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "48",
+      "top": "8",
+      "left": "8"
+     },
+     "children": [
+      {
+       "id": "1753963871154",
+       "type": "image",
+       "base": {
+        "top": "47",
+        "left": "180",
+        "width": "178",
+        "height": "55",
+        "widthmode": "fixed",
+        "heightmode": "hug"
+       },
+       "r320": {
+        "height": "32"
+       },
+       "r960": {},
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6161-6564-4131-b835-323662356465/svg_1753963871129.svg",
+       "alt": "",
+       "href": "index.html"
+      },
+      {
+       "kind": "group",
+       "id": "175396127861919170",
+       "flex": {
+        "flexdirection": "row",
+        "flexalignitems": "center",
+        "padding": "0 0 0 0",
+        "widthmode": "hug",
+        "heightmode": "hug",
+        "width": "527",
+        "height": "68",
+        "top": "40",
+        "left": "1109"
+       },
+       "r320": {
+        "width": "173",
+        "height": "57",
+        "left": "218"
+       },
+       "children": [
+        {
+         "id": "1753961180308",
+         "type": "button",
+         "base": {
+          "top": "56",
+          "left": "1109",
+          "width": "100",
+          "height": "36",
+          "fontsize": "16",
+          "widthmode": "fixed",
+          "heightmode": "fixed"
+         },
+         "r320": {
+          "top": "20",
+          "left": "218"
+         },
+         "r960": {
+          "width": "88",
+          "fontsize": "14"
+         },
+         "styles": {
+          "base": {
+           "color": "#ffffff",
+           "font-size": "16px",
+           "font-family": "'ANS',Arial,sans-serif",
+           "line-height": "1.2",
+           "font-weight": "400",
+           "text-transform": "uppercase",
+           "border-radius": "50px 50px 50px 50px",
+           "background-position": "center center"
+          },
+          "1199": {
+           "font-size": "14px",
+           "background-size": "cover"
+          },
+          "959": {
+           "background-size": "cover"
+          },
+          "639": {
+           "background-size": "cover"
+          },
+          "479": {
+           "background-size": "cover"
+          }
+         },
+         "href": "index.html#projects",
+         "text": "Проекты"
+        },
+        {
+         "id": "1753975656997",
+         "type": "button",
+         "base": {
+          "top": "56",
+          "left": "1249",
+          "width": "142",
+          "height": "36",
+          "fontsize": "16",
+          "widthmode": "fixed",
+          "heightmode": "fixed"
+         },
+         "r320": {
+          "top": "30",
+          "left": "228"
+         },
+         "r960": {
+          "width": "123",
+          "fontsize": "14"
+         },
+         "styles": {
+          "base": {
+           "color": "#ffffff",
+           "font-size": "16px",
+           "font-family": "'ANS',Arial,sans-serif",
+           "line-height": "1.2",
+           "font-weight": "400",
+           "text-transform": "uppercase",
+           "border-radius": "50px 50px 50px 50px",
+           "background-position": "center center"
+          },
+          "1199": {
+           "font-size": "14px",
+           "background-size": "cover"
+          },
+          "959": {
+           "background-size": "cover"
+          },
+          "639": {
+           "background-size": "cover"
+          },
+          "479": {
+           "background-size": "cover"
+          }
+         },
+         "href": "index.html#ai",
+         "text": "ИИ-решения"
+        },
+        {
+         "id": "1753975569167",
+         "type": "button",
+         "base": {
+          "top": "40",
+          "left": "1431",
+          "width": "205",
+          "height": "68",
+          "fontsize": "16",
+          "widthmode": "fixed",
+          "heightmode": "fixed"
+         },
+         "r320": {
+          "top": "20",
+          "left": "218"
+         },
+         "r960": {
+          "width": "173",
+          "fontsize": "14"
+         },
+         "styles": {
+          "base": {
+           "color": "#1e1e3d",
+           "font-size": "16px",
+           "font-family": "'ANS',Arial,sans-serif",
+           "line-height": "1.2",
+           "font-weight": "400",
+           "text-transform": "uppercase",
+           "border-radius": "50px 50px 50px 50px",
+           "background-position": "center center",
+           "background-color": "var(--t396-bgcolor-color,transparent)"
+          },
+          "1199": {
+           "font-size": "14px",
+           "background-size": "cover",
+           "background-color": "var(--t396-bgcolor-color,transparent)"
+          },
+          "959": {
+           "background-size": "cover",
+           "background-color": "var(--t396-bgcolor-color,transparent)"
+          },
+          "639": {
+           "background-size": "cover",
+           "background-color": "var(--t396-bgcolor-color,transparent)"
+          },
+          "479": {
+           "background-size": "cover",
+           "background-color": "var(--t396-bgcolor-color,transparent)"
+          }
+         },
+         "href": "ourfish.html#form",
+         "text": "Связаться"
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "row",
+         "column-gap": "40px",
+         "align-items": "center",
+         "justify-content": "flex-end",
+         "padding": "0px 0px 0px 0px",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px",
+         "opacity": "1"
+        }
+       }
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "row",
+       "column-gap": "0px",
+       "align-items": "center",
+       "justify-content": "space-between",
+       "padding": "20px 24px 20px 40px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "50px 50px 50px 50px",
+       "opacity": "1",
+       "background-image": "linear-gradient(0.165turn,rgba(111,111,255,1) 17%,rgba(57,57,255,1) 68%)"
+      },
+      "1199": {
+       "padding": "12px 16px 12px 32px"
+      },
+      "639": {
+       "padding": "8px 16px 8px 16px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1961028371",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "1093",
+    "heightmode": "hug",
+    "padding": "40px 20px 16px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "469",
+    "padding": null
+   },
+   "bg": {
+    "height": "1093px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(40px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(16px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175397813145751950",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "center",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "1037",
+      "top": "40",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "433",
+      "top": "24",
+      "left": "8"
+     },
+     "children": [
+      {
+       "kind": "group",
+       "id": "175490419105239300",
+       "flex": {
+        "flexdirection": "column",
+        "flexalignitems": "center",
+        "padding": "0 0 0 0",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "width": "1520",
+        "height": "134",
+        "top": "40",
+        "left": "140"
+       },
+       "r320": {
+        "width": "304",
+        "height": "185",
+        "top": "24"
+       },
+       "children": [
+        {
+         "id": "1754562484330",
+         "type": "text",
+         "base": {
+          "top": "40",
+          "left": "140",
+          "width": "1520",
+          "height": "78",
+          "fontsize": "var(--uc-typo-fontsize-edr9m1kTOwoA,60px)",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "24",
+          "width": "304",
+          "height": "68"
+         },
+         "r960": {
+          "width": "1008"
+         },
+         "styles": {
+          "base": {
+           "color": "var(--uc-typo-color-edr9m1kTOwoA,#1e1e3d)",
+           "font-size": "var(--uc-typo-fontsize-edr9m1kTOwoA,60px)",
+           "font-family": "var(--uc-typo-fontfamily-edr9m1kTOwoA,ANS)",
+           "line-height": "var(--uc-typo-lineheight-edr9m1kTOwoA,1.3)",
+           "font-weight": "var(--uc-typo-fontweight-edr9m1kTOwoA,400)",
+           "opacity": "var(--uc-typo-opacity-edr9m1kTOwoA,100%)",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          }
+         },
+         "html": "Наша рыба",
+         "text": "Наша рыба"
+        },
+        {
+         "id": "1754562484335",
+         "type": "text",
+         "base": {
+          "top": "138",
+          "left": "140",
+          "width": "1520",
+          "height": "36",
+          "fontsize": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "104",
+          "width": "304",
+          "height": "27"
+         },
+         "r960": {
+          "width": "1008"
+         },
+         "styles": {
+          "base": {
+           "color": "var(--uc-typo-color-vh1lmNE,#1e1e3d)",
+           "font-size": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+           "font-family": "var(--uc-typo-fontfamily-vh1lmNE,var(--t-text-font,Arial))",
+           "line-height": "var(--uc-typo-lineheight-vh1lmNE,1.5)",
+           "font-weight": "var(--uc-typo-fontweight-vh1lmNE,400)",
+           "opacity": "var(--uc-typo-opacity-vh1lmNE,100%)",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          }
+         },
+         "html": "Концепт информационного портала о рыбной продукции",
+         "text": "Концепт информационного портала о рыбной продукции"
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "column",
+         "row-gap": "20px",
+         "align-items": "center",
+         "justify-content": "flex-start",
+         "padding": "0px 0px 0px 0px",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px"
+        },
+        "639": {
+         "row-gap": "12px"
+        }
+       }
+      },
+      {
+       "id": "1754904064346",
+       "type": "image",
+       "base": {
+        "top": "222",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "241",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "32px 32px 32px 32px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "24px 24px 24px 24px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "12px 12px 12px 12px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild3136-3633-4234-b430-636335323363/cover.png",
+       "alt": ""
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "column",
+       "row-gap": "48px",
+       "align-items": "center",
+       "justify-content": "center",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px"
+      },
+      "639": {
+       "row-gap": "32px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1961028381",
+   "class": "r t-rec t-rec_pb_60 t-rec_pb-res-480_0",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1961028381\" class=\"r t-rec t-rec_pb_60 t-rec_pb-res-480_0\" style=\"padding-bottom:60px; \" data-record-type=\"113\"> <div style=\"height:56px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1961028391",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "144",
+    "heightmode": "hug",
+    "padding": "0px 20px 0px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "290",
+    "padding": null
+   },
+   "bg": {
+    "height": "144px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(0px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(0px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175397813145751950",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "center",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "144",
+      "top": "0",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "290",
+      "top": "0",
+      "left": "8"
+     },
+     "children": [
+      {
+       "id": "1754562484330",
+       "type": "text",
+       "base": {
+        "top": "0",
+        "left": "140",
+        "width": "1520",
+        "height": "52",
+        "fontsize": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "textfit": "autoheight"
+       },
+       "r320": {
+        "top": "0",
+        "width": "304",
+        "height": "68"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "color": "var(--uc-typo-color-w1S1175nItc2,#1e1e3d)",
+         "font-size": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+         "font-family": "var(--uc-typo-fontfamily-w1S1175nItc2,ANS)",
+         "line-height": "var(--uc-typo-lineheight-w1S1175nItc2,1.3)",
+         "font-weight": "var(--uc-typo-fontweight-w1S1175nItc2,400)",
+         "opacity": "var(--uc-typo-opacity-w1S1175nItc2,100%)",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "html": "О проекте",
+       "text": "О проекте"
+      },
+      {
+       "id": "1754562484335",
+       "type": "text",
+       "base": {
+        "top": "72",
+        "left": "140",
+        "width": "1520",
+        "height": "72",
+        "fontsize": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "textfit": "autoheight"
+       },
+       "r320": {
+        "top": "80",
+        "width": "304",
+        "height": "210"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "color": "var(--uc-typo-color-vh1lmNE,#1e1e3d)",
+         "font-size": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+         "font-family": "var(--uc-typo-fontfamily-vh1lmNE,var(--t-text-font,Arial))",
+         "line-height": "var(--uc-typo-lineheight-vh1lmNE,1.5)",
+         "font-weight": "var(--uc-typo-fontweight-vh1lmNE,400)",
+         "opacity": "var(--uc-typo-opacity-vh1lmNE,100%)",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "html": "Информационный портал о рыбной продукции, направленный на популяризацию потребления рыбы и повышение осведомлённости о её пользе, видах и способах приготовления.<br><br>Основная аудитория портала — массовый потребитель: семьи с детьми, молодежь и дети до 18 лет.",
+       "text": "Информационный портал о рыбной продукции, направленный на популяризацию потребления рыбы и повышение осведомлённости о её пользе, видах и способах приготовления.\n\nОсновная аудитория портала — массовый потребитель: семьи с детьми, молодежь и дети до 18 лет."
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "column",
+       "row-gap": "20px",
+       "align-items": "center",
+       "justify-content": "center",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px"
+      },
+      "639": {
+       "row-gap": "12px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1961028401",
+   "class": "r t-rec t-rec_pb_60 t-rec_pb-res-480_0",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1961028401\" class=\"r t-rec t-rec_pb_60 t-rec_pb-res-480_0\" style=\"padding-bottom:60px; \" data-record-type=\"113\"> <div style=\"height:56px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1961028411",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "144",
+    "heightmode": "hug",
+    "padding": "0px 20px 0px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "290",
+    "padding": null
+   },
+   "bg": {
+    "height": "144px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(0px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(0px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175397813145751950",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "center",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "144",
+      "top": "0",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "290",
+      "top": "0",
+      "left": "8"
+     },
+     "children": [
+      {
+       "id": "1754562484330",
+       "type": "text",
+       "base": {
+        "top": "0",
+        "left": "140",
+        "width": "1520",
+        "height": "52",
+        "fontsize": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "textfit": "autoheight"
+       },
+       "r320": {
+        "top": "0",
+        "width": "304",
+        "height": "68"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "color": "var(--uc-typo-color-w1S1175nItc2,#1e1e3d)",
+         "font-size": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+         "font-family": "var(--uc-typo-fontfamily-w1S1175nItc2,ANS)",
+         "line-height": "var(--uc-typo-lineheight-w1S1175nItc2,1.3)",
+         "font-weight": "var(--uc-typo-fontweight-w1S1175nItc2,400)",
+         "opacity": "var(--uc-typo-opacity-w1S1175nItc2,100%)",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "html": "Цель проекта",
+       "text": "Цель проекта"
+      },
+      {
+       "id": "1754562484335",
+       "type": "text",
+       "base": {
+        "top": "72",
+        "left": "140",
+        "width": "1520",
+        "height": "72",
+        "fontsize": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "textfit": "autoheight"
+       },
+       "r320": {
+        "top": "80",
+        "width": "304",
+        "height": "210"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "color": "var(--uc-typo-color-vh1lmNE,#1e1e3d)",
+         "font-size": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+         "font-family": "var(--uc-typo-fontfamily-vh1lmNE,var(--t-text-font,Arial))",
+         "line-height": "var(--uc-typo-lineheight-vh1lmNE,1.5)",
+         "font-weight": "var(--uc-typo-fontweight-vh1lmNE,400)",
+         "opacity": "var(--uc-typo-opacity-vh1lmNE,100%)",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "html": "Разработать дизайн информационного портала, который помогает пользователям находить рецепты и информацию о видах рыбы, изучать её полезные свойства и происхождение, выбирать качественную продукцию и узнавать, где её купить, а также быть в курсе мероприятий, акций и программы лояльности.<br><br>Интерфейс должен быть минималистичным, понятным для широкой аудитории, с акцентом на контент. Тональность — вдохновляющая, народная.",
+       "text": "Разработать дизайн информационного портала, который помогает пользователям находить рецепты и информацию о видах рыбы, изучать её полезные свойства и происхождение, выбирать качественную продукцию и узнавать, где её купить, а также быть в курсе мероприятий, акций и программы лояльности.\n\nИнтерфейс должен быть минималистичным, понятным для широкой аудитории, с акцентом на контент. Тональность — вдохновляющая, народная."
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "column",
+       "row-gap": "20px",
+       "align-items": "center",
+       "justify-content": "center",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px"
+      },
+      "639": {
+       "row-gap": "12px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1961028421",
+   "class": "r t-rec t-rec_pb_60 t-rec_pb-res-480_0",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1961028421\" class=\"r t-rec t-rec_pb_60 t-rec_pb-res-480_0\" style=\"padding-bottom:60px; \" data-record-type=\"113\"> <div style=\"height:56px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1961028431",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "7120",
+    "heightmode": "hug",
+    "padding": "0px 20px 16px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "1227",
+    "padding": null
+   },
+   "bg": {
+    "height": "7120px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(0px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(16px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175397813145751950",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "center",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "7104",
+      "top": "0",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "1215",
+      "top": "0",
+      "left": "8"
+     },
+     "children": [
+      {
+       "kind": "group",
+       "id": "175490419105239300",
+       "flex": {
+        "flexdirection": "column",
+        "flexalignitems": "center",
+        "padding": "0 0 48px 0",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "width": "1520",
+        "height": "264",
+        "top": "0",
+        "left": "140"
+       },
+       "r320": {
+        "width": "304",
+        "height": "351",
+        "top": "0"
+       },
+       "children": [
+        {
+         "id": "1754562484330",
+         "type": "text",
+         "base": {
+          "top": "0",
+          "left": "140",
+          "width": "1520",
+          "height": "52",
+          "fontsize": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "0",
+          "width": "304",
+          "height": "68"
+         },
+         "r960": {
+          "width": "1008"
+         },
+         "styles": {
+          "base": {
+           "color": "var(--uc-typo-color-w1S1175nItc2,#1e1e3d)",
+           "font-size": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+           "font-family": "var(--uc-typo-fontfamily-w1S1175nItc2,ANS)",
+           "line-height": "var(--uc-typo-lineheight-w1S1175nItc2,1.3)",
+           "font-weight": "var(--uc-typo-fontweight-w1S1175nItc2,400)",
+           "opacity": "var(--uc-typo-opacity-w1S1175nItc2,100%)",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          }
+         },
+         "html": "Главная",
+         "text": "Главная"
+        },
+        {
+         "id": "1754562484335",
+         "type": "text",
+         "base": {
+          "top": "72",
+          "left": "140",
+          "width": "1520",
+          "height": "108",
+          "fontsize": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "46",
+          "width": "304",
+          "height": "27"
+         },
+         "r960": {
+          "width": "1008"
+         },
+         "styles": {
+          "base": {
+           "color": "var(--uc-typo-color-vh1lmNE,#1e1e3d)",
+           "font-size": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+           "font-family": "var(--uc-typo-fontfamily-vh1lmNE,var(--t-text-font,Arial))",
+           "line-height": "var(--uc-typo-lineheight-vh1lmNE,1.5)",
+           "font-weight": "var(--uc-typo-fontweight-vh1lmNE,400)",
+           "opacity": "var(--uc-typo-opacity-vh1lmNE,100%)",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          }
+         },
+         "html": "Главная страница портала служит точкой входа и даёт общее представление о проекте. Она объединяет ключевые разделы — продукцию, энциклопедию, рецепты, статьи, медиа, бренды и мероприятия — и помогает пользователю быстро перейти к нужной информации. Страница выстроена так, чтобы с первого экрана было понятно назначение портала и его основные возможности, а навигация оставалась простой и интуитивной.",
+         "text": "Главная страница портала служит точкой входа и даёт общее представление о проекте. Она объединяет ключевые разделы — продукцию, энциклопедию, рецепты, статьи, медиа, бренды и мероприятия — и помогает пользователю быстро перейти к нужной информации. Страница выстроена так, чтобы с первого экрана было понятно назначение портала и его основные возможности, а навигация оставалась простой и интуитивной."
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "column",
+         "row-gap": "20px",
+         "align-items": "center",
+         "justify-content": "flex-start",
+         "padding": "0 0 48px 0",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px"
+        },
+        "639": {
+         "row-gap": "12px",
+         "padding": "0 0 32px 0"
+        }
+       }
+      },
+      {
+       "id": "1754904064346",
+       "type": "image",
+       "base": {
+        "top": "264",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "351",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "32px 32px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "24px 24px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "12px 12px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6130-6137-4438-b536-353663336132/ourfish-01.png",
+       "alt": ""
+      },
+      {
+       "id": "175889155397099880",
+       "type": "image",
+       "base": {
+        "top": "1119",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "567",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6239-6263-4662-a339-363265363162/ourfish-02.png",
+       "alt": ""
+      },
+      {
+       "id": "175889162390567710",
+       "type": "image",
+       "base": {
+        "top": "1974",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "783",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild3735-3863-4533-b539-663933336535/ourfish-03.png",
+       "alt": ""
+      },
+      {
+       "id": "1772038700162000001",
+       "type": "image",
+       "base": {
+        "top": "2829",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "793",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild3665-6635-4632-b061-616566626531/ourfish-04.png",
+       "alt": ""
+      },
+      {
+       "id": "1772038701079000002",
+       "type": "image",
+       "base": {
+        "top": "3684",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "793",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild3266-6561-4561-b731-646637663266/ourfish-05.png",
+       "alt": ""
+      },
+      {
+       "id": "1772038701866000003",
+       "type": "image",
+       "base": {
+        "top": "4539",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "793",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6465-3631-4533-b238-653536333835/ourfish-06.png",
+       "alt": ""
+      },
+      {
+       "id": "1772038702776000004",
+       "type": "image",
+       "base": {
+        "top": "5394",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "793",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6538-3336-4134-b462-336163313462/ourfish-07.png",
+       "alt": ""
+      },
+      {
+       "id": "175889160239971250",
+       "type": "image",
+       "base": {
+        "top": "6249",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "999",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 32px 32px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 24px 24px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 12px 12px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6532-3763-4061-a561-366233383334/ourfish-08.png",
+       "alt": ""
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "column",
+       "row-gap": "0px",
+       "align-items": "center",
+       "justify-content": "center",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px"
+      },
+      "639": {
+       "row-gap": "0px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1961028441",
+   "class": "r t-rec t-rec_pb_60 t-rec_pb-res-480_0",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1961028441\" class=\"r t-rec t-rec_pb_60 t-rec_pb-res-480_0\" style=\"padding-bottom:60px; \" data-record-type=\"113\"> <div style=\"height:56px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1961028451",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "2809",
+    "heightmode": "hug",
+    "padding": "0px 20px 16px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "974",
+    "padding": null
+   },
+   "bg": {
+    "height": "2809px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(0px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(16px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175397813145751950",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "center",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "2793",
+      "top": "0",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "962",
+      "top": "0",
+      "left": "8"
+     },
+     "children": [
+      {
+       "kind": "group",
+       "id": "175490419105239300",
+       "flex": {
+        "flexdirection": "column",
+        "flexalignitems": "center",
+        "padding": "0 0 48px 0",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "width": "1520",
+        "height": "228",
+        "top": "0",
+        "left": "140"
+       },
+       "r320": {
+        "width": "304",
+        "height": "314",
+        "top": "0"
+       },
+       "children": [
+        {
+         "id": "1754562484330",
+         "type": "text",
+         "base": {
+          "top": "0",
+          "left": "140",
+          "width": "1520",
+          "height": "52",
+          "fontsize": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "0",
+          "width": "304",
+          "height": "68"
+         },
+         "r960": {
+          "width": "1008"
+         },
+         "styles": {
+          "base": {
+           "color": "var(--uc-typo-color-w1S1175nItc2,#1e1e3d)",
+           "font-size": "var(--uc-typo-fontsize-w1S1175nItc2,40px)",
+           "font-family": "var(--uc-typo-fontfamily-w1S1175nItc2,ANS)",
+           "line-height": "var(--uc-typo-lineheight-w1S1175nItc2,1.3)",
+           "font-weight": "var(--uc-typo-fontweight-w1S1175nItc2,400)",
+           "opacity": "var(--uc-typo-opacity-w1S1175nItc2,100%)",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          }
+         },
+         "html": "Каталог и страница продукта",
+         "text": "Каталог и страница продукта"
+        },
+        {
+         "id": "1754562484335",
+         "type": "text",
+         "base": {
+          "top": "72",
+          "left": "140",
+          "width": "1520",
+          "height": "72",
+          "fontsize": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "114",
+          "width": "304",
+          "height": "27"
+         },
+         "r960": {
+          "width": "1008"
+         },
+         "styles": {
+          "base": {
+           "color": "var(--uc-typo-color-vh1lmNE,#1e1e3d)",
+           "font-size": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+           "font-family": "var(--uc-typo-fontfamily-vh1lmNE,var(--t-text-font,Arial))",
+           "line-height": "var(--uc-typo-lineheight-vh1lmNE,1.5)",
+           "font-weight": "var(--uc-typo-fontweight-vh1lmNE,400)",
+           "opacity": "var(--uc-typo-opacity-vh1lmNE,100%)",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          }
+         },
+         "html": "В каталоге пользователь выбирает интересующий вид рыбы, а на странице продукта получает основную информацию о нём — что это за рыба, чем она полезна и откуда происходит. Со страницы можно перейти к связанным материалам: рецептам, энциклопедии и другим разделам.",
+         "text": "В каталоге пользователь выбирает интересующий вид рыбы, а на странице продукта получает основную информацию о нём — что это за рыба, чем она полезна и откуда происходит. Со страницы можно перейти к связанным материалам: рецептам, энциклопедии и другим разделам."
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "column",
+         "row-gap": "20px",
+         "align-items": "center",
+         "justify-content": "flex-start",
+         "padding": "0 0 48px 0",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px"
+        },
+        "639": {
+         "row-gap": "12px",
+         "padding": "0 0 32px 0"
+        }
+       }
+      },
+      {
+       "id": "1754904064346",
+       "type": "image",
+       "base": {
+        "top": "228",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "314",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "32px 32px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "24px 24px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "12px 12px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6162-6261-4161-b630-636237653034/ourfish-09.png",
+       "alt": ""
+      },
+      {
+       "id": "1772039088505000001",
+       "type": "image",
+       "base": {
+        "top": "1083",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "530",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 0px 0px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild3465-3365-4338-a262-333034366131/ourfish-10.png",
+       "alt": ""
+      },
+      {
+       "id": "175889160239971250",
+       "type": "image",
+       "base": {
+        "top": "1938",
+        "left": "140",
+        "width": "1520",
+        "height": "855",
+        "widthmode": "fill",
+        "heightmode": "fixed"
+       },
+       "r320": {
+        "top": "746",
+        "width": "304",
+        "height": "216"
+       },
+       "r960": {
+        "width": "1008"
+       },
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 32px 32px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        },
+        "1199": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 24px 24px"
+        },
+        "639": {
+         "background-size": "cover",
+         "border-radius": "0px 0px 12px 12px"
+        }
+       },
+       "src": "../static.tildacdn.com/tild3134-3036-4261-b663-333038353764/ourfish-11.png",
+       "alt": ""
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "column",
+       "row-gap": "0px",
+       "align-items": "center",
+       "justify-content": "center",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px"
+      },
+      "639": {
+       "row-gap": "0px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1961028461",
+   "class": "r t-rec t-rec_pb_60 t-rec_pb-res-480_0",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1961028461\" class=\"r t-rec t-rec_pb_60 t-rec_pb-res-480_0\" style=\"padding-bottom:60px; \" data-record-type=\"113\"> <div style=\"height:56px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1961028551",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "280",
+    "heightmode": "hug",
+    "padding": "0px 20px 16px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "279",
+    "padding": null
+   },
+   "bg": {
+    "height": "280px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(0px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(16px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175397813145751950",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "center",
+      "padding": "24px 24px 24px 24px",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "264",
+      "top": "0",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "267",
+      "top": "0",
+      "left": "8"
+     },
+     "children": [
+      {
+       "id": "1754562484330",
+       "type": "text",
+       "base": {
+        "top": "24",
+        "left": "164",
+        "width": "1472",
+        "height": "52",
+        "fontsize": "var(--uc-typo-fontsize-va1mtFKCh,40px)",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "textfit": "autoheight"
+       },
+       "r320": {
+        "top": "16",
+        "left": "24",
+        "width": "272",
+        "height": "68"
+       },
+       "r960": {
+        "width": "960"
+       },
+       "styles": {
+        "base": {
+         "color": "var(--uc-typo-color-va1mtFKCh,#3939ff)",
+         "font-size": "var(--uc-typo-fontsize-va1mtFKCh,40px)",
+         "font-family": "var(--uc-typo-fontfamily-va1mtFKCh,ANS)",
+         "line-height": "var(--uc-typo-lineheight-va1mtFKCh,1.3)",
+         "font-weight": "var(--uc-typo-fontweight-va1mtFKCh,400)",
+         "opacity": "var(--uc-typo-opacity-va1mtFKCh,100%)",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "html": "Результат",
+       "text": "Результат"
+      },
+      {
+       "id": "1754562484335",
+       "type": "text",
+       "base": {
+        "top": "96",
+        "left": "164",
+        "width": "1472",
+        "height": "108",
+        "fontsize": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+        "widthmode": "fill",
+        "heightmode": "hug",
+        "textfit": "autoheight"
+       },
+       "r320": {
+        "top": "62",
+        "left": "24",
+        "width": "272",
+        "height": "189"
+       },
+       "r960": {
+        "width": "960"
+       },
+       "styles": {
+        "base": {
+         "color": "var(--uc-typo-color-vh1lmNE,#1e1e3d)",
+         "font-size": "var(--uc-typo-fontsize-vh1lmNE,24px)",
+         "font-family": "var(--uc-typo-fontfamily-vh1lmNE,var(--t-text-font,Arial))",
+         "line-height": "var(--uc-typo-lineheight-vh1lmNE,1.5)",
+         "font-weight": "var(--uc-typo-fontweight-vh1lmNE,400)",
+         "opacity": "var(--uc-typo-opacity-vh1lmNE,100%)",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "html": "Разработана дизайн-концепция информационного портала с понятной структурой и логичной навигацией. Интерфейс поддерживает основные пользовательские сценарии и помогает быстро находить рецепты, информацию о видах рыбы и местах покупки.<br>Визуальный стиль сочетает минимализм, морскую цветовую палитру и акцент на контент, что формирует цельный и узнаваемый образ проекта.",
+       "text": "Разработана дизайн-концепция информационного портала с понятной структурой и логичной навигацией. Интерфейс поддерживает основные пользовательские сценарии и помогает быстро находить рецепты, информацию о видах рыбы и местах покупки.\nВизуальный стиль сочетает минимализм, морскую цветовую палитру и акцент на контент, что формирует цельный и узнаваемый образ проекта."
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "column",
+       "row-gap": "20px",
+       "align-items": "center",
+       "justify-content": "center",
+       "padding": "24px 24px 24px 24px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-width": "0px",
+       "border-radius": "32px 32px 32px 32px",
+       "background-color": "#ffffff"
+      },
+      "1199": {
+       "border-radius": "24px 24px 24px 24px"
+      },
+      "639": {
+       "row-gap": "12px",
+       "padding": "20px 20px 20px 20px",
+       "border-radius": "12px 12px 12px 12px"
+      },
+      "479": {
+       "padding": "16px 16px 16px 16px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1202111011",
+   "class": "r t-rec t-rec_pt_210 t-rec_pt-res-480_120 t-rec_pb_30",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1202111011\" class=\"r t-rec t-rec_pt_210 t-rec_pt-res-480_120 t-rec_pb_30\" style=\"padding-top:210px;padding-bottom:30px; \" data-record-type=\"113\"> <div style=\"height:0px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1201751351",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "743",
+    "heightmode": "hug",
+    "padding": "0px 20px 0px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "811",
+    "padding": null
+   },
+   "bg": {
+    "height": "743px",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(0px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(0px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175396130020171640",
+     "flex": {
+      "flexdirection": "column",
+      "flexalignitems": "flex-start",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "743",
+      "top": "0",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "811",
+      "top": "0",
+      "left": "8"
+     },
+     "children": [
+      {
+       "kind": "group",
+       "id": "175431128085527050",
+       "flex": {
+        "flexdirection": "column",
+        "flexalignitems": "center",
+        "padding": "0 0 0 0",
+        "widthmode": "fixed",
+        "heightmode": "hug",
+        "width": "1034",
+        "height": "209",
+        "top": "0",
+        "left": "140"
+       },
+       "r320": {
+        "width": "304",
+        "height": "126",
+        "top": "0"
+       },
+       "children": [
+        {
+         "id": "1754311072957",
+         "type": "text",
+         "base": {
+          "top": "0",
+          "left": "140",
+          "width": "1034",
+          "height": "156",
+          "fontsize": "60",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "0",
+          "width": "304",
+          "height": "34",
+          "fontsize": "26"
+         },
+         "r960": {
+          "width": "720",
+          "fontsize": "42"
+         },
+         "styles": {
+          "base": {
+           "color": "#1e1e3d",
+           "font-size": "60px",
+           "font-family": "'ANS',Arial,sans-serif",
+           "line-height": "1.3",
+           "font-weight": "400",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          },
+          "1199": {
+           "font-size": "42px",
+           "background-size": "cover"
+          },
+          "639": {
+           "font-size": "34px",
+           "background-size": "cover"
+          },
+          "479": {
+           "font-size": "26px",
+           "background-size": "cover"
+          }
+         },
+         "html": "Всегда рады обсудить ваши задачи",
+         "text": "Всегда рады обсудить ваши задачи"
+        },
+        {
+         "id": "1754311207621",
+         "type": "text",
+         "base": {
+          "top": "172",
+          "left": "140",
+          "width": "1034",
+          "height": "37",
+          "fontsize": "24",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "textfit": "autoheight"
+         },
+         "r320": {
+          "top": "42",
+          "width": "304",
+          "height": "84"
+         },
+         "r960": {
+          "width": "720"
+         },
+         "styles": {
+          "base": {
+           "color": "#1e1e3d",
+           "font-size": "24px",
+           "font-family": "var(--t-text-font,Arial)",
+           "line-height": "1.55",
+           "font-weight": "400",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          },
+          "639": {
+           "font-size": "18px",
+           "background-size": "cover"
+          }
+         },
+         "html": "Свяжитесь с нами напрямую или заполните форму — ответим вам в течение 12 часов",
+         "text": "Свяжитесь с нами напрямую или заполните форму — ответим вам в течение 12 часов"
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "column",
+         "row-gap": "16px",
+         "align-items": "center",
+         "justify-content": "flex-start",
+         "padding": "0px 0px 0px 0px",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px"
+        },
+        "639": {
+         "row-gap": "8px"
+        }
+       }
+      },
+      {
+       "kind": "group",
+       "id": "175431248189243210",
+       "flex": {
+        "flexdirection": "row",
+        "flexalignitems": "flex-start",
+        "padding": "0 0 0 0",
+        "widthmode": "fixed",
+        "heightmode": "hug",
+        "width": "1520",
+        "height": "486",
+        "top": "257",
+        "left": "140"
+       },
+       "r320": {
+        "width": "304",
+        "height": "653",
+        "top": "158"
+       },
+       "children": [
+        {
+         "kind": "group",
+         "id": "175431209540487710",
+         "flex": {
+          "flexdirection": "column",
+          "flexalignitems": "flex-start",
+          "padding": "20px 20px 32px 20px",
+          "widthmode": "fill",
+          "heightmode": "hug",
+          "width": "1044",
+          "height": "486",
+          "top": "257",
+          "left": "140"
+         },
+         "r320": {
+          "width": "304",
+          "height": "399",
+          "top": "158"
+         },
+         "children": [
+          {
+           "id": "1754311367728",
+           "type": "form",
+           "base": {
+            "top": "277",
+            "left": "160",
+            "width": "1004",
+            "height": "390",
+            "widthmode": "fill",
+            "heightmode": "hug"
+           },
+           "r320": {
+            "top": "174",
+            "width": "272",
+            "height": "309"
+           },
+           "r960": {
+            "width": "968"
+           },
+           "styles": {
+            "base": {
+             "background-position": "center center",
+             "border-width": "var(--t396-borderwidth,0)",
+             "border-color": "var(--t396-bordercolor,transparent)"
+            }
+           },
+           "form": "<div class=\"t396__elem tn-elem form-fullwidth t396__elem-flex tn-elem__12017513511754311367728\" data-elem-id=\"1754311367728\" data-elem-type=\"form\" data-field-top-value=\"277\" data-field-left-value=\"160\" data-field-height-value=\"390\" data-field-width-value=\"1004\" data-field-axisy-value=\"top\" data-field-axisx-value=\"left\" data-field-container-value=\"grid\" data-field-topunits-value=\"px\" data-field-leftunits-value=\"px\" data-field-heightunits-value=\"px\" data-field-widthunits-value=\"px\" data-field-widthmode-value=\"fill\" data-field-heightmode-value=\"hug\" data-field-top-res-320-value=\"174\" data-field-height-res-320-value=\"309\" data-field-width-res-320-value=\"272\" data-field-top-res-480-value=\"156\" data-field-left-res-480-value=\"24\" data-field-height-res-480-value=\"309\" data-field-width-res-480-value=\"432\" data-field-top-res-640-value=\"213\" data-field-height-res-640-value=\"343\" data-field-width-res-640-value=\"584\" data-field-top-res-960-value=\"213\" data-field-left-res-960-value=\"28\" data-field-height-res-960-value=\"343\" data-field-width-res-960-value=\"968\" data-field-left-res-1200-value=\"40\" data-field-height-res-1200-value=\"390\" data-field-width-res-1200-value=\"844\" data-field-inputpos-value=\"v\" data-field-inputfontfamily-value=\"var(--t-text-font,Arial)\" data-field-fieldfontfamily-value=\"var(--t-text-font,Arial)\" data-field-buttonhovercolor-value=\"#d9ebeb\" data-field-buttonhoverbgcolor-value=\"#3939ff\" data-field-inputfontsize-value=\"18\" data-field-inputfontweight-value=\"400\" data-field-inputcolor-value=\"#1e1e3d\" data-field-inputbgcolor-value=\"#f0f0f4\" data-field-inputbordersize-value=\"0\" data-field-inputradius-value=\"16\" data-field-inputheight-value=\"52\" data-field-inputmargbottom-value=\"24\" data-field-inputmargright-value=\"20\" data-field-inputtitlefontsize-value=\"16\" data-field-inputtitlefontweight-value=\"400\" data-field-inputtitlecolor-value=\"#000000\" data-field-inputtitlemargbottom-value=\"5\" data-field-inputelsfontweight-value=\"400\" data-field-inputelsfontsize-value=\"14\" data-field-buttontitle-value=\"ОТПРАВИТЬ\" data-field-buttoncolor-value=\"#ffffff\" data-field-buttonbgcolor-value=\"#1e1e3d\" data-field-buttonradius-value=\"50\" data-field-buttonmargtop-value=\"60\" data-field-buttonwidth-value=\"200\" data-field-buttonheight-value=\"68\" data-field-buttonfontfamily-value=\"ANS\" data-field-buttonfontsize-value=\"16\" data-field-buttonfontweight-value=\"400\" data-field-formmsgsuccess-value='&lt;p style=\"text-align: center;\"&gt;&lt;span style=\"line-height: 30px; font-size: 20px; font-weight: 600;\"&gt;Уже получили вашу заявку!&lt;/span&gt;&lt;/p&gt;&lt;p style=\"text-align: center;\"&gt;&lt;span style=\"font-weight: 400; font-size: 14px;\"&gt;Свяжемся с&amp;nbsp;вами в&amp;nbsp;течение 12 часов&lt;/span&gt;&lt;/p&gt;' data-field-formerrreq-value=\"Ой, так мы не сможем с вами связаться\" data-field-receivers-value=\"d8cd5c7e21a9e6de5db2b37ce7e69159\" data-field-inputfontsize-res-480-value=\"16\" data-field-inputheight-res-480-value=\"48\" data-field-inputmargbottom-res-480-value=\"12\" data-field-buttonmargtop-res-480-value=\"24\" data-field-buttonheight-res-480-value=\"55\" data-field-buttonfontsize-res-480-value=\"12\" data-field-buttonmargtop-res-960-value=\"24\" data-field-buttonheight-res-960-value=\"57\" data-field-buttonfontsize-res-960-value=\"14\"> <div class=\"tn-atom tn-atom__form\"></div> <!--googleoff: all--> <!--noindex--> <div data-nosnippet=\"true\" class=\"tn-atom__inputs-wrapp\" style=\"display:none;\"> <div class=\"tn-atom__inputs-data\" data-value='[{\"lid\":\"1754311367728\",\"ls\":\"10\",\"loff\":\"\",\"li_parent_id\":\"\",\"li_type\":\"nm\",\"li_ph\":\"\\u0418\\u043c\\u044f\",\"li_nm\":\"Name\"},{\"lid\":\"1754311367729\",\"ls\":\"20\",\"loff\":\"\",\"li_parent_id\":\"\",\"li_type\":\"in\",\"li_ph\":\"\\u041f\\u043e\\u0447\\u0442\\u0430, \\u0442\\u0435\\u043b\\u0435\\u0444\\u043e\\u043d \\u0438\\u043b\\u0438 \\u043c\\u0435\\u0441\\u0441\\u0435\\u043d\\u0434\\u0436\\u0435\\u0440\",\"li_name\":\"contact\",\"li_req\":\"y\",\"li_nm\":\"contact\"},{\"lid\":\"1754311446909\",\"ls\":\"30\",\"loff\":\"\",\"li_parent_id\":\"\",\"li_type\":\"ta\",\"li_ph\":\"\\u041a\\u0440\\u0430\\u0442\\u04",
+           "inputs": [
+            [
+             null,
+             null
+            ]
+           ]
+          },
+          {
+           "id": "1754312103278",
+           "type": "text",
+           "base": {
+            "top": "687",
+            "left": "160",
+            "width": "1004",
+            "height": "24",
+            "fontsize": "16",
+            "widthmode": "fill",
+            "heightmode": "hug",
+            "textfit": "autoheight"
+           },
+           "r320": {
+            "top": "495",
+            "width": "272",
+            "height": "42"
+           },
+           "r960": {
+            "width": "968"
+           },
+           "styles": {
+            "base": {
+             "color": "#1e1e3d",
+             "font-size": "16px",
+             "font-family": "var(--t-text-font,Arial)",
+             "line-height": "1.5",
+             "font-weight": "400",
+             "background-position": "center center",
+             "border-width": "var(--t396-borderwidth,0)",
+             "border-color": "var(--t396-bordercolor,transparent)"
+            },
+            "639": {
+             "font-size": "14px",
+             "background-size": "cover"
+            }
+           },
+           "html": "Нажимая на кнопку, вы соглашаетесь с <u style=\"color: rgb(30, 30, 61);\"><a href=\"privacypolicy.html\" style=\"color: rgb(30, 30, 61); border-bottom-color: rgb(30, 30, 61); border-bottom-style: solid; box-shadow: none; text-decoration: none;\">политикой обработки персональных данных</a></u>",
+           "text": "Нажимая на кнопку, вы соглашаетесь с политикой обработки персональных данных"
+          }
+         ],
+         "tag": "div",
+         "styles": {
+          "base": {
+           "overflow": "visible visible",
+           "flex-direction": "column",
+           "row-gap": "20px",
+           "align-items": "flex-start",
+           "justify-content": "flex-start",
+           "padding": "20px 20px 32px 20px",
+           "border-color": "transparent",
+           "border-style": "solid",
+           "border-radius": "32px 32px 32px 32px",
+           "background-color": "#ffffff"
+          },
+          "1199": {
+           "border-radius": "24px 24px 24px 24px"
+          },
+          "639": {
+           "row-gap": "12px",
+           "padding": "16px 16px 20px 16px"
+          }
+         }
+        },
+        {
+         "kind": "group",
+         "id": "175431247655697810",
+         "flex": {
+          "flexdirection": "column",
+          "flexalignitems": "center",
+          "padding": "0 0 0 0",
+          "widthmode": "fixed",
+          "heightmode": "hug",
+          "width": "460",
+          "height": "300",
+          "top": "257",
+          "left": "1200"
+         },
+         "r320": {
+          "width": "304",
+          "height": "242",
+          "top": "569"
+         },
+         "children": [
+          {
+           "kind": "group",
+           "id": "175431246492774870",
+           "flex": {
+            "flexdirection": "column",
+            "flexalignitems": "flex-start",
+            "padding": "20px 20px 24px 20px",
+            "widthmode": "fill",
+            "heightmode": "hug",
+            "width": "460",
+            "height": "168",
+            "top": "257",
+            "left": "1200"
+           },
+           "r320": {
+            "width": "304",
+            "height": "138",
+            "top": "569"
+           },
+           "children": [
+            {
+             "id": "1754312464927",
+             "type": "text",
+             "base": {
+              "top": "277",
+              "left": "1220",
+              "width": "420",
+              "height": "36",
+              "fontsize": "24",
+              "widthmode": "fill",
+              "heightmode": "hug",
+              "textfit": "autoheight"
+             },
+             "r320": {
+              "top": "585",
+              "width": "272"
+             },
+             "r960": {
+              "width": "456"
+             },
+             "styles": {
+              "base": {
+               "color": "#1e1e3d",
+               "font-size": "24px",
+               "font-family": "var(--t-text-font,Arial)",
+               "line-height": "1.5",
+               "font-weight": "400",
+               "background-position": "center center",
+               "border-width": "var(--t396-borderwidth,0)",
+               "border-color": "var(--t396-bordercolor,transparent)"
+              },
+              "639": {
+               "font-size": "18px",
+               "background-size": "cover"
+              }
+             },
+             "html": "Телефон",
+             "text": "Телефон"
+            },
+            {
+             "kind": "group",
+             "id": "175431782477557260",
+             "flex": {
+              "flexdirection": "column",
+              "flexalignitems": "center",
+              "padding": "0 0 0 0",
+              "widthmode": "fill",
+              "heightmode": "hug",
+              "width": "420",
+              "height": "76",
+              "top": "325",
+              "left": "1220"
+             },
+             "r320": {
+              "width": "272",
+              "height": "67",
+              "top": "620"
+             },
+             "children": [
+              {
+               "id": "1754312464950",
+               "type": "text",
+               "base": {
+                "top": "325",
+                "left": "1220",
+                "width": "420",
+                "height": "24",
+                "fontsize": "16",
+                "widthmode": "fill",
+                "heightmode": "hug",
+                "textfit": "autoheight"
+               },
+               "r320": {
+                "top": "620",
+                "width": "272"
+               },
+               "r960": {
+                "width": "456"
+               },
+               "styles": {
+                "base": {
+                 "color": "#1e1e3d",
+                 "font-size": "16px",
+                 "font-family": "var(--t-text-font,Arial)",
+                 "line-height": "1.5",
+                 "font-weight": "400",
+                 "background-position": "center center",
+                 "border-width": "var(--t396-borderwidth,0)",
+                 "border-color": "var(--t396-bordercolor,transparent)"
+                },
+                "639": {
+                 "font-size": "14px",
+                 "background-size": "cover"
+                }
+               },
+               "html": "<a href=\"tel:+79172848737\" target=\"_blank\" style=\"color: inherit\"><span style=\"color: rgb(30, 30, 61);\">+7 917 284-87-37</span></a>",
+               "text": "+7 917 284-87-37"
+              },
+              {
+               "id": "1754317775378",
+               "type": "text",
+               "base": {
+                "top": "353",
+                "left": "1220",
+                "width": "420",
+                "height": "48",
+                "fontsize": "16",
+                "widthmode": "fill",
+                "heightmode": "hug",
+                "textfit": "autoheight"
+               },
+               "r320": {
+                "top": "645",
+                "width": "272"
+               },
+               "r960": {
+                "width": "456"
+               },
+               "styles": {
+                "base": {
+                 "color": "#1e1e3d",
+                 "font-size": "16px",
+                 "font-family": "var(--t-text-font,Arial)",
+                 "line-height": "1.5",
+                 "font-weight": "400",
+                 "background-position": "center center",
+                 "border-width": "var(--t396-borderwidth,0)",
+                 "border-color": "var(--t396-bordercolor,transparent)"
+                },
+                "639": {
+                 "font-size": "14px",
+                 "background-size": "cover"
+                }
+               },
+               "html": "09:00-20:00 (МСК)<br>С понедельника по пятницу",
+               "text": "09:00-20:00 (МСК)\nС понедельника по пятницу"
+              }
+             ],
+             "tag": "div",
+             "styles": {
+              "base": {
+               "overflow": "visible visible",
+               "flex-direction": "column",
+               "row-gap": "4px",
+               "align-items": "center",
+               "justify-content": "flex-start",
+               "padding": "0px 0px 0px 0px",
+               "border-color": "transparent",
+               "border-style": "solid",
+               "border-radius": "0px"
+              }
+             }
+            }
+           ],
+           "tag": "div",
+           "styles": {
+            "base": {
+             "overflow": "visible visible",
+             "flex-direction": "column",
+             "row-gap": "12px",
+             "align-items": "flex-start",
+             "justify-content": "flex-start",
+             "padding": "20px 20px 24px 20px",
+             "border-color": "transparent",
+             "border-style": "solid",
+             "border-radius": "32px 32px 32px 32px",
+             "background-color": "#ffffff"
+            },
+            "1199": {
+             "border-radius": "24px 24px 24px 24px"
+            },
+            "639": {
+             "row-gap": "8px",
+             "padding": "16px 16px 20px 16px"
+            }
+           }
+          },
+          {
+           "kind": "group",
+           "id": "175431238496346520",
+           "flex": {
+            "flexdirection": "column",
+            "flexalignitems": "flex-start",
+            "padding": "20px 20px 24px 20px",
+            "widthmode": "fill",
+            "heightmode": "hug",
+            "width": "460",
+            "height": "116",
+            "top": "441",
+            "left": "1200"
+           },
+           "r320": {
+            "width": "304",
+            "height": "92",
+            "top": "719"
+           },
+           "children": [
+            {
+             "id": "1754312384963",
+             "type": "text",
+             "base": {
+              "top": "461",
+              "left": "1220",
+              "width": "420",
+              "height": "36",
+              "fontsize": "24",
+              "widthmode": "fill",
+              "heightmode": "hug",
+              "textfit": "autoheight"
+             },
+             "r320": {
+              "top": "735",
+              "width": "272"
+             },
+             "r960": {
+              "width": "456"
+             },
+             "styles": {
+              "base": {
+               "color": "#1e1e3d",
+               "font-size": "24px",
+               "font-family": "var(--t-text-font,Arial)",
+               "line-height": "1.5",
+               "font-weight": "400",
+               "background-position": "center center",
+               "border-width": "var(--t396-borderwidth,0)",
+               "border-color": "var(--t396-bordercolor,transparent)"
+              },
+              "639": {
+               "font-size": "18px",
+               "background-size": "cover"
+              }
+             },
+             "html": "Почта",
+             "text": "Почта"
+            },
+            {
+             "id": "1754312420753",
+             "type": "text",
+             "base": {
+              "top": "509",
+              "left": "1220",
+              "width": "420",
+              "height": "24",
+              "fontsize": "16",
+              "widthmode": "fill",
+              "heightmode": "hug",
+              "textfit": "autoheight"
+             },
+             "r320": {
+              "top": "770",
+              "width": "272"
+             },
+             "r960": {
+              "width": "456"
+             },
+             "styles": {
+              "base": {
+               "color": "#1e1e3d",
+               "font-size": "16px",
+               "font-family": "var(--t-text-font,Arial)",
+               "line-height": "1.5",
+               "font-weight": "400",
+               "background-position": "center center",
+               "border-width": "var(--t396-borderwidth,0)",
+               "border-color": "var(--t396-bordercolor,transparent)"
+              },
+              "639": {
+               "font-size": "14px",
+               "background-size": "cover"
+              }
+             },
+             "html": "<a href=\"mailto:alex@kazan-project-manufactory.ru?subject=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&amp;body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!\" target=\"_blank\" style=\"color: inherit\">alex@kazan-project-manufactory.ru</a>",
+             "text": "alex@kazan-project-manufactory.ru"
+            }
+           ],
+           "tag": "div",
+           "styles": {
+            "base": {
+             "overflow": "visible visible",
+             "flex-direction": "column",
+             "row-gap": "12px",
+             "align-items": "flex-start",
+             "justify-content": "flex-start",
+             "padding": "20px 20px 24px 20px",
+             "border-color": "transparent",
+             "border-style": "solid",
+             "border-radius": "32px 32px 32px 32px",
+             "background-color": "#ffffff"
+            },
+            "1199": {
+             "border-radius": "24px 24px 24px 24px"
+            },
+            "639": {
+             "row-gap": "8px",
+             "padding": "16px 16px 20px 16px"
+            }
+           }
+          }
+         ],
+         "tag": "div",
+         "styles": {
+          "base": {
+           "overflow": "visible visible",
+           "flex-direction": "column",
+           "row-gap": "16px",
+           "align-items": "center",
+           "justify-content": "flex-start",
+           "padding": "0px 0px 0px 0px",
+           "border-color": "transparent",
+           "border-style": "solid",
+           "border-radius": "0px"
+          },
+          "1199": {
+           "flex-direction": "row",
+           "column-gap": "16px",
+           "align-items": "center"
+          },
+          "959": {
+           "flex-direction": "column",
+           "align-items": "center"
+          },
+          "639": {
+           "flex-direction": "column",
+           "row-gap": "12px",
+           "align-items": "center"
+          }
+         }
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "row",
+         "column-gap": "16px",
+         "align-items": "flex-start",
+         "justify-content": "flex-start",
+         "padding": "0px 0px 0px 0px",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px"
+        },
+        "1199": {
+         "flex-direction": "column",
+         "row-gap": "16px",
+         "align-items": "flex-start"
+        },
+        "639": {
+         "row-gap": "12px"
+        }
+       }
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "visible visible",
+       "flex-direction": "column",
+       "row-gap": "48px",
+       "align-items": "flex-start",
+       "justify-content": "space-between",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px"
+      },
+      "1199": {
+       "padding": "0px 0px 0px 0px"
+      },
+      "639": {
+       "row-gap": "32px",
+       "padding": "0px 0px 0px 0px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1202112686",
+   "class": "r t-rec t-rec_pt_180 t-rec_pt-res-480_90",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1202112686\" class=\"r t-rec t-rec_pt_180 t-rec_pt-res-480_90\" style=\"padding-top:180px; \" data-record-type=\"113\"> <div style=\"height:0px;\"></div> </div> "
+  },
+  {
+   "rec": "rec1202113601",
+   "rec_class": "r t-rec",
+   "artboard": {
+    "height": "143",
+    "heightmode": "hug",
+    "padding": "40px 20px 48px 20px",
+    "flexdirection": "column",
+    "flexalignitems": "center",
+    "flexjustifycontent": "center",
+    "upscale": "grid",
+    "valign": "stretch"
+   },
+   "artboard_320": {
+    "height": "172",
+    "padding": null
+   },
+   "bg": {
+    "height": "143px",
+    "background-color": "#1e1e3d",
+    "overflow": "visible",
+    "display": "flex",
+    "box-sizing": "border-box",
+    "flex-direction": "column",
+    "flex-wrap": "nowrap",
+    "align-items": "center",
+    "justify-content": "center",
+    "align-content": "flex-start",
+    "padding-top": "calc(40px * var(--zoom,1))",
+    "padding-right": "calc(20px * var(--zoom,1))",
+    "padding-bottom": "calc(48px * var(--zoom,1))",
+    "padding-left": "calc(20px * var(--zoom,1))"
+   },
+   "children": [
+    {
+     "kind": "group",
+     "id": "175396130020171640",
+     "flex": {
+      "flexdirection": "row",
+      "flexalignitems": "center",
+      "padding": "0 0 0 0",
+      "widthmode": "fixed",
+      "heightmode": "hug",
+      "width": "1520",
+      "height": "55",
+      "top": "40",
+      "left": "140"
+     },
+     "r320": {
+      "width": "304",
+      "height": "116",
+      "top": "24",
+      "left": "8"
+     },
+     "children": [
+      {
+       "id": "1754319004154",
+       "type": "image",
+       "base": {
+        "top": "40",
+        "left": "140",
+        "width": "178",
+        "height": "55",
+        "widthmode": "fixed",
+        "heightmode": "hug"
+       },
+       "r320": {
+        "top": "24",
+        "height": "48"
+       },
+       "r960": {},
+       "styles": {
+        "base": {
+         "border-radius": "0px 0px 0px 0px",
+         "background-position": "center center",
+         "border-width": "var(--t396-borderwidth,0)",
+         "border-color": "var(--t396-bordercolor,transparent)"
+        }
+       },
+       "src": "../static.tildacdn.com/tild6161-6564-4131-b835-323662356465/svg_1753963871129.svg",
+       "alt": ""
+      },
+      {
+       "kind": "group",
+       "id": "175431905083345760",
+       "flex": {
+        "flexdirection": "row",
+        "flexalignitems": "center",
+        "padding": "0 0 0 0",
+        "widthmode": "hug",
+        "heightmode": "hug",
+        "width": "754",
+        "height": "24",
+        "top": "56",
+        "left": "906"
+       },
+       "r320": {
+        "width": "291",
+        "height": "44",
+        "top": "96"
+       },
+       "children": [
+        {
+         "id": "1754318966303",
+         "type": "text",
+         "base": {
+          "top": "56",
+          "left": "906",
+          "width": "334",
+          "height": "24",
+          "fontsize": "16",
+          "widthmode": "hug",
+          "heightmode": "hug",
+          "textfit": "autowidth"
+         },
+         "r320": {
+          "top": "96",
+          "width": "183",
+          "height": "18",
+          "fontsize": "12"
+         },
+         "r960": {
+          "width": "244"
+         },
+         "styles": {
+          "base": {
+           "color": "#ffffff",
+           "font-size": "16px",
+           "font-family": "'onest',Arial,sans-serif",
+           "line-height": "1.5",
+           "font-weight": "400",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          },
+          "639": {
+           "font-size": "14px",
+           "background-size": "cover"
+          },
+          "479": {
+           "font-size": "12px",
+           "background-size": "cover"
+          }
+         },
+         "html": "<a href=\"privacypolicy.html\" style=\"color: inherit\">Политика обработки персональных данных</a>",
+         "text": "Политика обработки персональных данных"
+        },
+        {
+         "id": "1754319034424",
+         "type": "text",
+         "base": {
+          "top": "56",
+          "left": "1272",
+          "width": "388",
+          "height": "24",
+          "fontsize": "16",
+          "widthmode": "hug",
+          "heightmode": "hug",
+          "textfit": "autowidth"
+         },
+         "r320": {
+          "top": "122",
+          "width": "291",
+          "height": "18",
+          "fontsize": "12"
+         },
+         "r960": {
+          "width": "388"
+         },
+         "styles": {
+          "base": {
+           "color": "#ffffff",
+           "font-size": "16px",
+           "font-family": "'onest',Arial,sans-serif",
+           "line-height": "1.5",
+           "font-weight": "400",
+           "background-position": "center center",
+           "border-width": "var(--t396-borderwidth,0)",
+           "border-color": "var(--t396-bordercolor,transparent)"
+          },
+          "639": {
+           "font-size": "14px",
+           "background-size": "cover"
+          },
+          "479": {
+           "font-size": "12px",
+           "background-size": "cover"
+          }
+         },
+         "html": "<div style=\"white-space: nowrap;\" data-customstyle=\"yes\">ООО “Казанская проектная мануфактура” © 2025</div>",
+         "text": "ООО “Казанская проектная мануфактура” © 2025"
+        }
+       ],
+       "tag": "div",
+       "styles": {
+        "base": {
+         "overflow": "visible visible",
+         "flex-direction": "row",
+         "column-gap": "32px",
+         "align-items": "center",
+         "justify-content": "flex-start",
+         "padding": "0px 0px 0px 0px",
+         "border-color": "transparent",
+         "border-style": "solid",
+         "border-radius": "0px",
+         "opacity": "1"
+        },
+        "959": {
+         "flex-direction": "column",
+         "row-gap": "12px",
+         "align-items": "flex-start"
+        },
+        "479": {
+         "row-gap": "8px"
+        }
+       }
+      }
+     ],
+     "tag": "div",
+     "styles": {
+      "base": {
+       "overflow": "hidden hidden",
+       "flex-direction": "row",
+       "column-gap": "12px",
+       "align-items": "center",
+       "justify-content": "space-between",
+       "padding": "0px 0px 0px 0px",
+       "border-color": "transparent",
+       "border-style": "solid",
+       "border-radius": "0px 0px 0px 0px",
+       "opacity": "1"
+      },
+      "1199": {
+       "padding": "0px 0px 0px 0px"
+      },
+      "959": {
+       "flex-direction": "column",
+       "row-gap": "24px",
+       "align-items": "flex-start"
+      },
+      "639": {
+       "padding": "0px 0px 0px 0px"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "rec": "rec1203463206",
+   "class": "r t-rec",
+   "note": "non-zero block",
+   "html": "<div id=\"rec1203463206\" class=\"r t-rec\" style=\" \" data-animationappear=\"off\" data-record-type=\"270\"> <div class=\"t270\" data-offset-top=\"144\" data-offset-top-mobile=\"76\"></div> <script>t_onReady(function() {var hash=window.location.hash;if(hash!=='') {if(window.isMobile) {t_onFuncLoad('t270_scroll',function() {t270_scroll(hash,76);});} else {t_onFuncLoad('t270_scroll',function() {t270_scroll(hash,144);});}}\nsetTimeout(function() {var curPath=window.location.pathname;var curFullPath=window.location.origin + curPath;var recs=document.querySelectorAll('.r');Array.prototype.forEach.call(recs,functi"
+  }
+ ]
+}

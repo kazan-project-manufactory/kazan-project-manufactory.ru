@@ -10,6 +10,7 @@
 - `assets/` — шрифты (Onest, ANS), картинки в webp (`assets/img/<slug>/`, `manifest.json` — соответствие tildacdn → локальный файл), логотип, иконки, og
 - `tools/extract_zero.py` — парсер Zero Block из зеркала Тильды в JSON; `tools/images.py` — конвертация картинок
 - `robots.txt`, `<meta name="robots" content="noindex">` на каждой странице, `CNAME`, `.nojekyll`
+- `exp/` — дизайн-эксперименты: `exp/REGISTRY.md` (реестр), `exp/index.html` (список, генерируется), `exp/<slug>/` — копия страниц эксперимента; корень сайта эксперименты не трогают
 
 ## Снимок Тильды
 
@@ -19,7 +20,11 @@
 
 - Главная — руками в `index.html`.
 - Кейс — поправить `extract/<slug>.json` (из тега) или сам `<slug>/index.html`; пересобрать: `git checkout tilda-snapshot-2026-09-16 -- extract && python3 tools/build_page.py --all`.
-- Проверка локально: `python3 -m http.server 8000`.
+- Проверка локально: `python3 -m http.server 8000` из корня (пути к ассетам абсолютные, `/assets/...`).
+
+## Эксперименты
+
+Оригинал живёт в корне, каждый эксперимент — в своей папке: `python3 tools/exp.py new <slug>` копирует все страницы и `styles.css` в `exp/<slug>/` (ассеты общие, внутренние ссылки остаются внутри эксперимента, внизу страницы бейдж со ссылкой на оригинал). Правки — только внутри `exp/<slug>/`. Затем строка в `exp/REGISTRY.md` и `python3 tools/exp.py index`. Принятый эксперимент переносится в корень руками, папка остаётся как история.
 
 ## Деплой
 

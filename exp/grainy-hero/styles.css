@@ -1,0 +1,275 @@
+/* kazan-project-manufactory.ru — static rebuild of the Tilda site.
+   Tokens come from the Tilda Zero Block export (extract/_summary.json, DESIGN.md). */
+
+@font-face { font-family: ANS; src: url("/assets/fonts/ANS-Regular.woff") format("woff"); font-weight: 300 400; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestLight1602-hint.woff") format("woff"); font-weight: 300; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestRegular1602-hin.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestMedium1602-hint.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestBold1602-hint.woff") format("woff"); font-weight: 600 700; font-display: swap; }
+
+:root {
+  --ink: #1e1e3d;          /* headings, body text, dark buttons, footer */
+  --bg: #f6f6f6;           /* page background */
+  --white: #ffffff;
+  --accent: #3939ff;       /* brand blue */
+  --hero-grad: linear-gradient(0.25turn, #3939ff 0%, #222299 100%);
+  --link: #005aab;
+  --field: #f0f0f5;        /* form inputs */
+  --shadow: -13px 43px 18px 0 rgba(44,44,92,.01), -7px 24px 15px 0 rgba(44,44,92,.04),
+            -3px 11px 11px 0 rgba(44,44,92,.07), -1px 3px 6px 0 rgba(44,44,92,.08);
+  --radius: 32px;          /* cards; 24px below 1200 */
+  --font-display: ANS, Arial, sans-serif;
+  --font-text: Onest, Arial, sans-serif;
+  --wrap: 1520px;
+  --gutter: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--font-text); }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+button, input, textarea { font: inherit; color: inherit; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- Typography (Tilda uc-typo styles) ---------- */
+.h1 { font: 400 60px/1.3 var(--font-display); }                 /* section titles */
+.h2 { font: 400 40px/1.3 var(--font-display); }                 /* case titles */
+.h3 { font: 400 30px/1.3 var(--font-display); color: var(--white); } /* card titles */
+.lead { font: 400 24px/1.5 var(--font-text); }
+.small { font: 300 18px/1.5 var(--font-display); }
+.caps { font: 400 16px/1.2 var(--font-display); text-transform: uppercase; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 16px;
+  padding: 26px 40px; border-radius: 50px; border: 0; cursor: pointer;
+  font: 400 16px/1 var(--font-display); text-transform: uppercase; white-space: nowrap;
+  transition: opacity .2s;
+}
+.btn:hover { opacity: .9; }
+.btn--light { background: var(--white); color: var(--ink); }
+.btn--dark { background: var(--ink); color: var(--white); }
+.btn--light .btn__arrow { width: 128px; height: 8px; }
+
+/* ---------- Header ---------- */
+.header { padding: 32px 0; }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { width: 178px; height: 55px; }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav a { padding: 10px 21px; color: var(--white); }
+.nav .btn { margin-left: 21px; padding: 26px 40px; color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--hero-grad); color: var(--white); padding: 0 0 120px; }
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 96px; align-items: center; }
+.hero__title { font: 400 44px/1.2 var(--font-display); text-transform: uppercase; max-width: 720px; }
+.hero__list { margin: 80px 0 0; display: grid; gap: 20px; }
+.hero__list li { display: flex; align-items: center; gap: 15px; font: 400 20px/1.2 var(--font-display); text-transform: uppercase; }
+.hero__list svg { flex: 0 0 16px; width: 16px; height: 16px; }
+.hero__cta { margin-top: 80px; }
+.hero__art { display: flex; justify-content: center; align-items: center; }
+.hero__art svg { width: 480px; height: auto; }
+
+/* ---------- Sections ---------- */
+.section { padding-top: 120px; }
+.section--projects .h1 { padding-bottom: 48px; }
+.section--ai { padding-top: 210px; }
+.section--contact { padding-top: 240px; }
+
+/* Project cards: two columns, right column offset by 160px like on Tilda */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.cards__col { display: grid; gap: 16px; }
+.cards__col--offset { padding-top: 160px; }
+.card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  height: 600px; padding: 24px; border-radius: var(--radius); border: 1px solid #dbdbdb;
+  color: var(--white); overflow: hidden; position: relative;
+  background-color: var(--card-bg, #1e1e1e); background-image: var(--card-img);
+  background-size: 100%; background-position: center bottom; background-repeat: no-repeat;
+  box-shadow: var(--shadow); transition: background-size .4s ease;
+}
+.card:hover { background-size: 110%; }
+.card--grad { background-image: var(--card-img), var(--card-grad); background-size: 100%, cover; background-position: center bottom, center; }
+.card--grad:hover { background-size: 110%, cover; }
+.card--left { background-position: left bottom; }
+.card--grad.card--left { background-position: left bottom, center; }
+.card__title { max-width: 703px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-block; padding: 6px 16px; border-radius: 50px; background: var(--white); color: var(--ink); font: 300 18px/1.5 var(--font-display); }
+
+@media (min-width: 1600px) { .card { height: 720px; } }
+
+/* AI section */
+.ai { display: grid; gap: 48px; }
+.ai__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.ai__col { display: grid; gap: 16px; }
+.tile { display: flex; gap: 16px; align-items: flex-start; padding: 16px 20px 20px; border-radius: 16px; background: var(--white); box-shadow: var(--shadow); }
+.tile__emoji { font: 600 24px/1.5 var(--font-text); flex: 0 0 26px; }
+.tile__body { display: grid; gap: 4px; padding-top: 4px; }
+.tile__title { font-weight: 600; }
+.ai__cta { display: grid; gap: 32px; justify-items: start; padding-top: 20px; }
+
+/* Contact */
+.contact { display: grid; gap: 48px; }
+.contact__head { display: grid; gap: 16px; max-width: 1034px; }
+.contact__grid { display: grid; grid-template-columns: 1fr 460px; gap: 16px; align-items: start; }
+.panel { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.form { display: grid; gap: 20px; padding: 20px 20px 32px; }
+.form__fields { display: grid; gap: 12px; }
+.form input, .form textarea { width: 100%; padding: 14px 20px; border: 0; border-radius: 12px; background: var(--field); font: 400 18px/1.5 var(--font-text); }
+.form textarea { min-height: 116px; resize: vertical; }
+.form input::placeholder, .form textarea::placeholder { color: #8b8b9a; }
+.form .btn { width: 100%; margin-top: 56px; }
+.form__consent a { text-decoration: underline; }
+.contact__side { display: grid; gap: 16px; }
+.contact__card { display: grid; gap: 12px; padding: 20px 20px 24px; }
+.contact__card p + p { margin-top: 4px; }
+
+/* Footer */
+.footer { margin-top: 180px; padding: 40px 0 48px; background: var(--ink); color: var(--white); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.footer__links { display: flex; gap: 32px; align-items: center; }
+
+
+/* ---------- Case pages (generated by tools/build_page.py) ---------- */
+.pill-header { padding: 20px 0 16px; }
+.pill { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px 20px 40px; border-radius: 50px; background: var(--hero-grad); color: var(--white); }
+.rec .wrap { display: flex; flex-direction: column; gap: 48px; }
+.g { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.g .g { width: 100%; }
+.g > :where(h1, h2, h3, p, img) { width: 100%; }
+.g[style*="flex-direction:row"] > * { flex: 1 1 0; min-width: 0; }
+.g[style*="flex-wrap"] > * { flex: 0 1 auto; }
+.pic { width: 100%; height: auto; border-radius: var(--radius); }
+.h2.accent { color: var(--accent); }
+.strong { font-weight: 600; }
+.page ul, .page ol { list-style: disc; padding-left: 28px; }
+.page p p { display: inline; }
+.sp { width: 100%; }
+.page .section--contact { padding-top: 0; }
+.page .footer { margin-top: 0; }
+@media (max-width: 959px) {
+  .g[style*="flex-direction:row"] { flex-direction: column !important; }
+  .rec .wrap { gap: 32px; }
+}
+@media (max-width: 639px) {
+  .pill { padding: 12px 16px; }
+  .sp { height: 0 !important; }
+  .rec { padding-top: 24px !important; padding-bottom: 8px !important; }
+}
+
+/* ---------- Responsive (Tilda artboards: 1600 / 1200 / 960 / 640 / 480 / 320) ---------- */
+@media (max-width: 1199px) {
+  :root { --radius: 24px; }
+  .h1 { font-size: 42px; }
+  .h2 { font-size: 32px; }
+  .hero__grid { padding-top: 140px; }
+  .hero__title { font-size: 36px; }
+  .hero__art svg { width: 380px; }
+  .card, .card--grad { background-size: cover; }
+  .card:hover, .card--grad:hover { background-size: cover; }
+}
+@media (max-width: 959px) {
+  .hero__grid { grid-template-columns: 1fr; padding-top: 97px; }
+  .hero__art { order: -1; }
+  .hero__art svg { width: 300px; }
+  .hero__list { margin-top: 40px; }
+  .cards, .ai__grid { grid-template-columns: 1fr; }
+  .cards__col--offset { padding-top: 0; }
+  .card { height: 520px; }
+  .contact__grid { grid-template-columns: 1fr; }
+  .section--ai, .section--contact { padding-top: 140px; }
+  .footer { margin-top: 120px; }
+}
+@media (max-width: 639px) {
+  :root { --gutter: 8px; }
+  .h1 { font-size: 34px; }
+  .h2 { font-size: 26px; }
+  .h3 { font-size: 24px; }
+  .lead { font-size: 18px; }
+  .hero { padding-bottom: 60px; }
+  .hero__grid { padding-top: 56px; }
+  .hero__title { font-size: 30px; }
+  .hero__list li { font-size: 16px; }
+  .hero__list { gap: 14px; }
+  .hero__cta { margin-top: 48px; }
+  .btn { padding: 20px 28px; }
+  .nav { display: none; }
+  .hero__art { display: none; }
+  .btn__arrow { display: none; }
+  .header { padding: 20px 0; }
+  .logo { width: 140px; height: auto; }
+  .card { height: 360px; padding: 16px; }
+  .chip { font-size: 14px; }
+  .section { padding-top: 60px; }
+  .section--ai, .section--contact { padding-top: 120px; }
+  .footer .wrap { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 479px) {
+  .h1 { font-size: 26px; }
+  .h2 { font-size: 24px; }
+  .h3 { font-size: 18px; }
+  .hero__title { font-size: 20px; }
+  .hero__list li { font-size: 14px; }
+}
+
+
+/* ==========================================================================
+   exp: grainy-hero — живой зернистый градиент hero.
+   Источник: https://github.com/cjimmy/grainy-gradients (SVG feTurbulence поверх градиента).
+   Бренд-цвета те же (#3939ff → #222299), добавлены: медленное «дыхание» угла и
+   светового пятна через @property, слой плёночного зерна. Без JS, 0 КБ ассетов.
+   ========================================================================== */
+@property --g-angle { syntax: '<angle>'; inherits: false; initial-value: 90deg; }
+@property --g-x { syntax: '<percentage>'; inherits: false; initial-value: 20%; }
+@property --g-y { syntax: '<percentage>'; inherits: false; initial-value: 30%; }
+
+:root {
+  /* зерно: SVG-шум 160×160, тайлится; opacity задаётся слоем */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .33 .33 .33 0 0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='2.6' intercept='-.9'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hero, .pill, .footer {
+  position: relative; isolation: isolate;
+  --g-angle: 90deg; --g-x: 20%; --g-y: 30%;
+}
+.hero, .pill {
+  background:
+    radial-gradient(60% 80% at var(--g-x) var(--g-y), rgba(255,255,255,.16), transparent 70%),
+    linear-gradient(var(--g-angle), #3939ff 0%, #222299 100%);
+}
+.hero { animation: g-breathe 22s ease-in-out infinite alternate; }
+.pill { animation: g-breathe 22s ease-in-out infinite alternate; }
+
+/* слой зерна поверх фона, под контентом */
+.hero::before, .pill::before, .footer::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--grain); background-size: 200px 200px;
+  mix-blend-mode: overlay; opacity: .6;
+}
+.pill::before { border-radius: 50px; }
+.footer::before { opacity: .3; }
+
+@keyframes g-breathe {
+  0%   { --g-angle: 78deg;  --g-x: 18%; --g-y: 28%; }
+  50%  { --g-angle: 96deg;  --g-x: 62%; --g-y: 70%; }
+  100% { --g-angle: 106deg; --g-x: 84%; --g-y: 22%; }
+}
+
+/* CTA: то же зерно на тёмных кнопках при hover */
+.btn--dark { position: relative; isolation: isolate; overflow: hidden; }
+.btn--dark::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--grain); background-size: 120px 120px;
+  mix-blend-mode: soft-light; opacity: 0; transition: opacity .3s;
+}
+.btn--dark:hover::before { opacity: .7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero, .pill { animation: none; }
+}

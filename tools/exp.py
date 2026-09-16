@@ -57,7 +57,9 @@ def new(slug):
         out = dst / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(text, encoding='utf-8')
-    shutil.copy(ROOT / 'styles.css', dst / 'styles.css')
+    # font urls in styles.css are relative to the root; keep them pointing at the shared /assets
+    css = (ROOT / 'styles.css').read_text(encoding='utf-8').replace('url("assets/', 'url("/assets/')
+    (dst / 'styles.css').write_text(css, encoding='utf-8')
     (dst / 'README.md').write_text(README.format(slug=slug), encoding='utf-8')
     print(f'exp/{slug}/: {sum(1 for _ in pages())} pages + styles.css + README.md → edit there, then `exp.py index`')
 

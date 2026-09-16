@@ -1,0 +1,339 @@
+/* kazan-project-manufactory.ru — static rebuild of the Tilda site.
+   Tokens come from the Tilda Zero Block export (extract/_summary.json, DESIGN.md). */
+
+@font-face { font-family: ANS; src: url("/assets/fonts/ANS-Regular.woff") format("woff"); font-weight: 300 400; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestLight1602-hint.woff") format("woff"); font-weight: 300; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestRegular1602-hin.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestMedium1602-hint.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestBold1602-hint.woff") format("woff"); font-weight: 600 700; font-display: swap; }
+
+:root {
+  --ink: #1e1e3d;          /* headings, body text, dark buttons, footer */
+  --bg: #f6f6f6;           /* page background */
+  --white: #ffffff;
+  --accent: #3939ff;       /* brand blue */
+  --hero-grad: linear-gradient(0.25turn, #3939ff 0%, #222299 100%);
+  --link: #005aab;
+  --field: #f0f0f5;        /* form inputs */
+  --shadow: -13px 43px 18px 0 rgba(44,44,92,.01), -7px 24px 15px 0 rgba(44,44,92,.04),
+            -3px 11px 11px 0 rgba(44,44,92,.07), -1px 3px 6px 0 rgba(44,44,92,.08);
+  --radius: 32px;          /* cards; 24px below 1200 */
+  --font-display: ANS, Arial, sans-serif;
+  --font-text: Onest, Arial, sans-serif;
+  --wrap: 1520px;
+  --gutter: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--font-text); }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+button, input, textarea { font: inherit; color: inherit; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- Typography (Tilda uc-typo styles) ---------- */
+.h1 { font: 400 60px/1.3 var(--font-display); }                 /* section titles */
+.h2 { font: 400 40px/1.3 var(--font-display); }                 /* case titles */
+.h3 { font: 400 30px/1.3 var(--font-display); color: var(--white); } /* card titles */
+.lead { font: 400 24px/1.5 var(--font-text); }
+.small { font: 300 18px/1.5 var(--font-display); }
+.caps { font: 400 16px/1.2 var(--font-display); text-transform: uppercase; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 16px;
+  padding: 26px 40px; border-radius: 50px; border: 0; cursor: pointer;
+  font: 400 16px/1 var(--font-display); text-transform: uppercase; white-space: nowrap;
+  transition: opacity .2s;
+}
+.btn:hover { opacity: .9; }
+.btn--light { background: var(--white); color: var(--ink); }
+.btn--dark { background: var(--ink); color: var(--white); }
+.btn--light .btn__arrow { width: 128px; height: 8px; }
+
+/* ---------- Header ---------- */
+.header { padding: 32px 0; }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { width: 178px; height: 55px; }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav a { padding: 10px 21px; color: var(--white); }
+.nav .btn { margin-left: 21px; padding: 26px 40px; color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--hero-grad); color: var(--white); padding: 0 0 120px; }
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 96px; align-items: center; }
+.hero__title { font: 400 44px/1.2 var(--font-display); text-transform: uppercase; max-width: 720px; }
+.hero__list { margin: 80px 0 0; display: grid; gap: 20px; }
+.hero__list li { display: flex; align-items: center; gap: 15px; font: 400 20px/1.2 var(--font-display); text-transform: uppercase; }
+.hero__list svg { flex: 0 0 16px; width: 16px; height: 16px; }
+.hero__cta { margin-top: 80px; }
+.hero__art { display: flex; justify-content: center; align-items: center; }
+.hero__art svg { width: 480px; height: auto; }
+
+/* ---------- Sections ---------- */
+.section { padding-top: 120px; }
+.section--projects .h1 { padding-bottom: 48px; }
+.section--ai { padding-top: 210px; }
+.section--contact { padding-top: 240px; }
+
+/* Project cards: two columns, right column offset by 160px like on Tilda */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.cards__col { display: grid; gap: 16px; }
+.cards__col--offset { padding-top: 160px; }
+.card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  height: 600px; padding: 24px; border-radius: var(--radius); border: 1px solid #dbdbdb;
+  color: var(--white); overflow: hidden; position: relative;
+  background-color: var(--card-bg, #1e1e1e); background-image: var(--card-img);
+  background-size: 100%; background-position: center bottom; background-repeat: no-repeat;
+  box-shadow: var(--shadow); transition: background-size .4s ease;
+}
+.card:hover { background-size: 110%; }
+.card--grad { background-image: var(--card-img), var(--card-grad); background-size: 100%, cover; background-position: center bottom, center; }
+.card--grad:hover { background-size: 110%, cover; }
+.card--left { background-position: left bottom; }
+.card--grad.card--left { background-position: left bottom, center; }
+.card__title { max-width: 703px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-block; padding: 6px 16px; border-radius: 50px; background: var(--white); color: var(--ink); font: 300 18px/1.5 var(--font-display); }
+
+@media (min-width: 1600px) { .card { height: 720px; } }
+
+/* AI section */
+.ai { display: grid; gap: 48px; }
+.ai__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.ai__col { display: grid; gap: 16px; }
+.tile { display: flex; gap: 16px; align-items: flex-start; padding: 16px 20px 20px; border-radius: 16px; background: var(--white); box-shadow: var(--shadow); }
+.tile__emoji { font: 600 24px/1.5 var(--font-text); flex: 0 0 26px; }
+.tile__body { display: grid; gap: 4px; padding-top: 4px; }
+.tile__title { font-weight: 600; }
+.ai__cta { display: grid; gap: 32px; justify-items: start; padding-top: 20px; }
+
+/* Contact */
+.contact { display: grid; gap: 48px; }
+.contact__head { display: grid; gap: 16px; max-width: 1034px; }
+.contact__grid { display: grid; grid-template-columns: 1fr 460px; gap: 16px; align-items: start; }
+.panel { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.form { display: grid; gap: 20px; padding: 20px 20px 32px; }
+.form__fields { display: grid; gap: 12px; }
+.form input, .form textarea { width: 100%; padding: 14px 20px; border: 0; border-radius: 12px; background: var(--field); font: 400 18px/1.5 var(--font-text); }
+.form textarea { min-height: 116px; resize: vertical; }
+.form input::placeholder, .form textarea::placeholder { color: #8b8b9a; }
+.form .btn { width: 100%; margin-top: 56px; }
+.form__consent a { text-decoration: underline; }
+.contact__side { display: grid; gap: 16px; }
+.contact__card { display: grid; gap: 12px; padding: 20px 20px 24px; }
+.contact__card p + p { margin-top: 4px; }
+
+/* Footer */
+.footer { margin-top: 180px; padding: 40px 0 48px; background: var(--ink); color: var(--white); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.footer__links { display: flex; gap: 32px; align-items: center; }
+
+
+/* ---------- Case pages (generated by tools/build_page.py) ---------- */
+.pill-header { padding: 20px 0 16px; }
+.pill { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px 20px 40px; border-radius: 50px; background: var(--hero-grad); color: var(--white); }
+.rec .wrap { display: flex; flex-direction: column; gap: 48px; }
+.g { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.g .g { width: 100%; }
+.g > :where(h1, h2, h3, p, img) { width: 100%; }
+.g[style*="flex-direction:row"] > * { flex: 1 1 0; min-width: 0; }
+.g[style*="flex-wrap"] > * { flex: 0 1 auto; }
+.pic { width: 100%; height: auto; border-radius: var(--radius); }
+.h2.accent { color: var(--accent); }
+.strong { font-weight: 600; }
+.page ul, .page ol { list-style: disc; padding-left: 28px; }
+.page p p { display: inline; }
+.sp { width: 100%; }
+.page .section--contact { padding-top: 0; }
+.page .footer { margin-top: 0; }
+@media (max-width: 959px) {
+  .g[style*="flex-direction:row"] { flex-direction: column !important; }
+  .rec .wrap { gap: 32px; }
+}
+@media (max-width: 639px) {
+  .pill { padding: 12px 16px; }
+  .sp { height: 0 !important; }
+  .rec { padding-top: 24px !important; padding-bottom: 8px !important; }
+}
+
+/* ---------- Responsive (Tilda artboards: 1600 / 1200 / 960 / 640 / 480 / 320) ---------- */
+@media (max-width: 1199px) {
+  :root { --radius: 24px; }
+  .h1 { font-size: 42px; }
+  .h2 { font-size: 32px; }
+  .hero__grid { padding-top: 140px; }
+  .hero__title { font-size: 36px; }
+  .hero__art svg { width: 380px; }
+  .card, .card--grad { background-size: cover; }
+  .card:hover, .card--grad:hover { background-size: cover; }
+}
+@media (max-width: 959px) {
+  .hero__grid { grid-template-columns: 1fr; padding-top: 97px; }
+  .hero__art { order: -1; }
+  .hero__art svg { width: 300px; }
+  .hero__list { margin-top: 40px; }
+  .cards, .ai__grid { grid-template-columns: 1fr; }
+  .cards__col--offset { padding-top: 0; }
+  .card { height: 520px; }
+  .contact__grid { grid-template-columns: 1fr; }
+  .section--ai, .section--contact { padding-top: 140px; }
+  .footer { margin-top: 120px; }
+}
+@media (max-width: 639px) {
+  :root { --gutter: 8px; }
+  .h1 { font-size: 34px; }
+  .h2 { font-size: 26px; }
+  .h3 { font-size: 24px; }
+  .lead { font-size: 18px; }
+  .hero { padding-bottom: 60px; }
+  .hero__grid { padding-top: 56px; }
+  .hero__title { font-size: 30px; }
+  .hero__list li { font-size: 16px; }
+  .hero__list { gap: 14px; }
+  .hero__cta { margin-top: 48px; }
+  .btn { padding: 20px 28px; }
+  .nav { display: none; }
+  .hero__art { display: none; }
+  .btn__arrow { display: none; }
+  .header { padding: 20px 0; }
+  .logo { width: 140px; height: auto; }
+  .card { height: 360px; padding: 16px; }
+  .chip { font-size: 14px; }
+  .section { padding-top: 60px; }
+  .section--ai, .section--contact { padding-top: 120px; }
+  .footer .wrap { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 479px) {
+  .h1 { font-size: 26px; }
+  .h2 { font-size: 24px; }
+  .h3 { font-size: 18px; }
+  .hero__title { font-size: 20px; }
+  .hero__list li { font-size: 14px; }
+}
+
+/* ======================================================================
+   exp/lenis-scroll — the whole page as one scroll gesture (lenis 1.3.26)
+   --p       0..1 progress of a pinned section title (set by scroll.js)
+   --v       -1..1 normalised scroll velocity (html)
+   --progress 0..1 page progress (html)
+   --scroll  scrollY in px (html)
+   ====================================================================== */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+@property --v { syntax: '<number>'; inherits: true; initial-value: 0; }
+:root { --v: 0; --progress: 0; --scroll: 0; transition: --v .25s ease-out; }
+
+/* Giant section titles */
+.giant {
+  font-size: clamp(30px, var(--giant, 11vw), 160px);
+  line-height: .95; letter-spacing: -.02em; text-wrap: balance;
+  max-width: 12ch; margin: 0;
+}
+.section--ai .giant { --giant: 8.6vw; max-width: 14ch; }
+.section--contact .giant { --giant: 8vw; max-width: 14ch; }
+.section--projects .h1 { padding-bottom: 0; }
+.sec-head { position: relative; --p: 0; }
+.sec-head__pin { position: relative; padding: 0 0 48px; }
+.sec-num {
+  position: absolute; right: 0; top: -.35em; z-index: 0; pointer-events: none;
+  font: 400 clamp(160px, 34vw, 520px)/1 var(--font-display);
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent); opacity: .35;
+}
+.giant { position: relative; z-index: 1; }
+
+/* With JS: title is pinned for a screen and shrinks into the corner while the
+   section body rises over it. Without JS or with reduced motion — plain flow. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .sec-head { height: 170vh; margin-top: -60px; }
+  html.js .sec-head__pin {
+    position: sticky; top: 0; height: 100vh; padding: 0;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  html.js .sec-body { position: relative; z-index: 2; margin-top: -62vh; }
+  /* grid containers turn into block flow so the negative margin actually shortens the page */
+  html.js .ai, html.js .contact { display: block; }
+  html.js .ai > * + *, html.js .contact > * + * { margin-top: 48px; }
+  html.js .ai > .sec-body, html.js .contact > .sec-body { margin-top: -62vh; }
+  html.js .giant {
+    transform-origin: left center;
+    transform: translate3d(0, calc(var(--p) * -30vh), 0)
+               scale(calc(1 - var(--p) * .55))
+               skewY(calc(var(--v) * -1.5deg));
+    letter-spacing: calc(-.02em - var(--p) * .03em);
+  }
+  html.js .sec-num {
+    top: 50%; margin-top: -.5em;
+    transform: translate3d(calc(var(--p) * -18vw), calc(var(--p) * -20vh), 0) rotate(calc(var(--p) * -6deg));
+    opacity: calc(.4 - var(--p) * .4);
+  }
+  html.js .sec-head__pin::after {            /* running progress line under the title */
+    content: ""; position: absolute; left: 0; bottom: 18vh; height: 2px; width: 100%;
+    background: var(--accent); transform-origin: left; transform: scaleX(var(--p)); opacity: calc(min(1, (1 - var(--p)) * 5) * .6);
+  }
+  /* velocity → skew (classic lenis demo): cards, tiles, panels */
+  html.js .card, html.js .tile, html.js .panel {
+    transform: skewY(calc(var(--v) * 4deg)); will-change: transform;
+  }
+  html.js .cards__col--offset .card { transform: skewY(calc(var(--v) * -4deg)); }
+  html.js .card { transition: background-size .4s ease; }
+  /* hero art: light parallax + stretch with speed */
+  html.js .hero__art svg {
+    transform: translate3d(0, calc(var(--scroll) * .18px), 0) scaleY(calc(1 + var(--v) * .08));
+    transform-origin: center;
+  }
+  html.js .hero__title { transform: translate3d(0, calc(var(--scroll) * .06px), 0); }
+}
+
+/* Progress thread on the right edge: fill + section marks */
+.thread {
+  position: fixed; right: 28px; top: 10vh; bottom: 10vh; width: 2px; z-index: 50;
+  background: rgba(255,255,255,.3); color: #fff; mix-blend-mode: difference;
+}
+.thread__fill {
+  position: absolute; inset: 0; background: currentColor;
+  transform-origin: top; transform: scaleY(var(--progress));
+}
+.thread__mark {
+  position: absolute; left: 50%; top: calc(var(--at) * 100%);
+  transform: translate(-50%, -50%); display: flex; align-items: center; gap: 12px;
+  flex-direction: row-reverse; color: inherit;
+}
+.thread__mark i {
+  display: block; width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid currentColor; background: transparent; transition: transform .3s, background .3s;
+}
+.thread__mark span {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font: 400 12px/1 var(--font-display); text-transform: uppercase; letter-spacing: .12em;
+  opacity: .55; transition: opacity .3s; white-space: nowrap;
+}
+.thread__mark:hover span, .thread__mark.is-active span { opacity: 1; }
+.thread__mark.is-active i { background: currentColor; transform: scale(1.4); }
+html.js .thread__mark { cursor: pointer; }
+
+@media (max-width: 959px) {
+  .thread { right: 10px; }
+  .thread__mark span { display: none; }
+  .sec-num { -webkit-text-stroke-width: 1px; }
+  .giant { --giant: 13vw; }
+  .section--ai .giant { --giant: 9.5vw; }
+  .section--contact .giant { --giant: 11vw; }
+}
+@media (max-width: 639px) {
+  .sec-head__pin { padding-bottom: 32px; }
+  html.js .sec-head { height: 150vh; margin-top: 0; }
+  html.js .sec-body, html.js .ai > .sec-body, html.js .contact > .sec-body { margin-top: -66vh; }
+  html.js .giant { transform: translate3d(0, calc(var(--p) * -26vh), 0) scale(calc(1 - var(--p) * .45)); }
+  html.js .sec-head__pin::after { bottom: 22vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thread__fill { display: none; }
+  .thread__mark i { transition: none; }
+}

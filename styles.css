@@ -63,7 +63,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .logo { width: 178px; height: 55px; }
 .nav { display: flex; align-items: center; gap: 0; }
-.nav a { padding: 10px 21px; color: var(--white); }
+.nav a { padding: 10px 21px; }
+.nav a:not(.btn) { color: var(--white); }
 .nav a:not(.btn):hover { color: var(--hover); }
 .nav .btn { margin-left: 21px; padding: 26px 40px; }
 

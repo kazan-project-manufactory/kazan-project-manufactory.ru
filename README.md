@@ -1,16 +1,17 @@
 # kazan-project-manufactory.ru — статика
 
-Сайт Казанской проектной мануфактуры на чистом HTML+CSS, без сборки. Живёт на **lab.kazan-project-manufactory.ru** (GitHub Pages, закрыт от индексации) — это и рабочая версия сайта до переключения apex с Тильды, и полигон дизайн-экспериментов.
+Сайт Казанской проектной мануфактуры на чистом HTML+CSS. Страницы собирает Hugo из исходников в приватном монорепо (`projects/kpm-site/hugo/`), сюда попадает готовый HTML — руками его не правят. Живёт на **lab.kazan-project-manufactory.ru** (GitHub Pages, закрыт от индексации) — это и рабочая версия сайта до переключения apex с Тильды, и полигон дизайн-экспериментов.
 
 В корне — сам сайт, каждый эксперимент — отдельной папкой `exp/<slug>/` рядом. Эксперименты корень не трогают: по адресу `/` всегда чистая версия.
 
 ## Структура
 
 - `index.html` — главная (верстка руками по экстракту Тильды)
-- `<slug>/index.html` — 7 кейсов и `privacypolicy` — генерируются `tools/build_page.py` из `extract/<slug>.json`
+- `<slug>/index.html` — 7 кейсов и `privacypolicy`
+- шапка, подвал, логотип и секция с формой — общие, живут в шаблонах Hugo, а не в каждой странице
 - `styles.css` — токены (`:root`), типографика, кнопки, карточки, секции, брейкпоинты 1600/1200/960/640/480/320 как у артбордов Тильды
 - `assets/` — шрифты (Onest, ANS), картинки в webp (`assets/img/<slug>/`, `manifest.json` — соответствие tildacdn → локальный файл), логотип, иконки, og
-- `tools/extract_zero.py` — парсер Zero Block из зеркала Тильды в JSON; `tools/images.py` — конвертация картинок
+- `tools/extract_zero.py` — парсер Zero Block из зеркала Тильды в JSON; `tools/images.py` — конвертация картинок; `tools/exp.py` — эксперименты
 - `robots.txt`, `<meta name="robots" content="noindex">` на каждой странице, `CNAME`, `.nojekyll`
 - `exp/` — дизайн-эксперименты: `exp/REGISTRY.md` (реестр), `exp/index.html` (список, генерируется), `exp/<slug>/` — копия страниц эксперимента; корень сайта эксперименты не трогают
 
@@ -20,9 +21,14 @@
 
 ## Как править
 
-- Главная — руками в `index.html`.
-- Кейс — поправить `extract/<slug>.json` (из тега) или сам `<slug>/index.html`; пересобрать: `git checkout tilda-snapshot-2026-09-16 -- extract && python3 tools/build_page.py --all`.
-- Проверка локально: `python3 -m http.server 8000` из корня (пути к ассетам абсолютные, `/assets/...`).
+HTML в этом репозитории — результат сборки. Правки идут в исходники Hugo (`projects/kpm-site/hugo/` в монорепо):
+
+- текст и вёрстка страницы — `hugo/content/<slug>.html` (или `_index.html` для главной);
+- шапка, подвал, логотип, форма — `hugo/layouts/`;
+- собрать: `cd hugo && hugo` — готовый HTML ложится прямо в этот репозиторий, остаётся закоммитить и запушить;
+- посмотреть локально: `cd hugo && hugo server`, либо `python3 -m http.server 8000` из корня сайта.
+
+`styles.css`, `assets/`, `robots.txt`, `CNAME` и `exp/` Hugo не трогает — они правятся здесь напрямую.
 
 ## Эксперименты
 
@@ -34,4 +40,4 @@ Push в `main` — Pages пересобирает за 1–2 минуты. Push 
 
 ## Форма
 
-На lab бэкенда нет: кнопка «Отправить» открывает письмо на alex@kazan-project-manufactory.ru с заполненными полями. Перед переключением apex — подключить реальную отправку.
+Заявки уходят в функцию Yandex Cloud Functions (`projects/kpm-site/form-api/`), та отправляет письмо через Yandex Cloud Postbox. Скрипт формы — `assets/form.js`, разметка — в шаблоне Hugo.

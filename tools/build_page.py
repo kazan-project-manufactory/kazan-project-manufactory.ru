@@ -189,7 +189,7 @@ def contact_html(title, lead):
       <p class="lead">{lead}</p>
     </div>
     <div class="contact__grid">
-      <form class="panel form" id="lead-form" action="mailto:alex@kazan-project-manufactory.ru" method="get">
+      <form class="panel form" id="lead-form">
         <div class="form__fields">
           <input type="text" name="name" placeholder="Имя" autocomplete="name">
           <input type="text" name="contact" placeholder="Почта, телефон или мессенджер" required>
@@ -197,6 +197,7 @@ def contact_html(title, lead):
         </div>
         <button class="btn btn--dark" type="submit">Отправить</button>
         <p class="form__consent">Нажимая на&nbsp;кнопку, вы соглашаетесь с <a href="/privacypolicy/">политикой обработки персональных данных</a></p>
+        <p class="form__consent form__status" role="status" aria-live="polite"></p>
       </form>
       <div class="contact__side">
         <div class="panel contact__card">
@@ -212,14 +213,7 @@ def contact_html(title, lead):
   </div>
 </section>'''
 
-FORM_JS = '''<script>
-  // ponytail: no backend on lab — the form opens a prefilled mail draft; real delivery is a follow-up task
-  document.getElementById('lead-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = e.target, body = 'Имя: ' + f.name.value + '\\nКонтакт: ' + f.contact.value + '\\n\\n' + f.task.value;
-    location.href = 'mailto:alex@kazan-project-manufactory.ru?subject=' + encodeURIComponent('Заявка с сайта') + '&body=' + encodeURIComponent(body);
-  });
-</script>'''
+FORM_JS = '<script src="/assets/form.js" defer></script>'
 
 
 def build(slug):

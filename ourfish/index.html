@@ -106,19 +106,29 @@
   <div class="wrap contact">
     <div class="contact__head">
       <h2 class="h1">Всегда рады обсудить ваши задачи</h2>
-      <p class="lead">Свяжитесь с нами напрямую или заполните форму — ответим вам в течение 12 часов</p>
+      <p class="lead">Свяжитесь с нами напрямую или заполните форму — ответим вам в течение рабочего дня</p>
     </div>
     <div class="contact__grid">
-      <form class="panel form" id="lead-form" action="mailto:alex@kazan-project-manufactory.ru" method="get">
+      <form class="panel form" id="lead-form">
         <div class="form__fields">
-          <input type="text" name="name" placeholder="Имя" autocomplete="name">
-          <input type="text" name="contact" placeholder="Почта, телефон или мессенджер" required>
-          <textarea name="task" placeholder="Краткое описание задачи"></textarea>
+          <label class="field">
+            <span class="field__label">Имя</span>
+            <input type="text" name="name" placeholder="Как к&nbsp;вам обращаться" autocomplete="name">
+          </label>
+          <label class="field">
+            <span class="field__label">Как с&nbsp;вами связаться <span class="field__req" aria-hidden="true">*</span></span>
+            <input type="text" name="contact" placeholder="Почта, телефон или мессенджер" autocomplete="email" inputmode="email" required aria-required="true">
+          </label>
+          <label class="field">
+            <span class="field__label">Задача</span>
+            <textarea name="task" placeholder="Например: нужен сайт музея к&nbsp;открытию выставки в&nbsp;марте"></textarea>
+          </label>
         </div>
         <div class="form__trap" aria-hidden="true"><input type="text" name="form-spec-comments" tabindex="-1" autocomplete="off"></div>
-        <button class="btn btn--dark" type="submit">Отправить</button>
+        <p class="form__status" role="status" aria-live="polite" hidden></p>
+        <button class="btn btn--dark" type="submit">Обсудить проект</button>
+        <p class="form__promise">Ответим в&nbsp;течение рабочего дня: напишем на&nbsp;почту, уточним детали и&nbsp;предложим, как двигаться</p>
         <p class="form__consent">Нажимая на&nbsp;кнопку, вы соглашаетесь с <a href="/privacypolicy/">политикой обработки персональных данных</a></p>
-          <p class="form__consent form__status" role="status" aria-live="polite"></p>
       </form>
       <div class="contact__side">
         <div class="panel contact__card">

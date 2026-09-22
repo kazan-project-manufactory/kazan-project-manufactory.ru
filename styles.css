@@ -130,6 +130,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .form input::placeholder, .form textarea::placeholder { color: #8b8b9a; }
 .form .btn { width: 100%; margin-top: 56px; }
 .form__consent a { text-decoration: underline; }
+.form__trap { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
 .contact__side { display: grid; gap: 16px; }
 .contact__card { display: grid; gap: 12px; padding: 20px 20px 24px; }
 .contact__card p + p { margin-top: 4px; }

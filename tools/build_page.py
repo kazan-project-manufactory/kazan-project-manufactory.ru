@@ -195,6 +195,7 @@ def contact_html(title, lead):
           <input type="text" name="contact" placeholder="Почта, телефон или мессенджер" required>
           <textarea name="task" placeholder="Краткое описание задачи"></textarea>
         </div>
+        <div class="form__trap" aria-hidden="true"><input type="text" name="form-spec-comments" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn--dark" type="submit">Отправить</button>
         <p class="form__consent">Нажимая на&nbsp;кнопку, вы соглашаетесь с <a href="/privacypolicy/">политикой обработки персональных данных</a></p>
         <p class="form__consent form__status" role="status" aria-live="polite"></p>
@@ -234,7 +235,7 @@ def build(slug):
 <meta property="og:type" content="article">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://lab.kazan-project-manufactory.ru/{og}">
+<meta property="og:image" content="https://kazan-project-manufactory.ru/{og}">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg" media="(prefers-color-scheme: light)">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg" media="(prefers-color-scheme: dark)">

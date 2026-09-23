@@ -48,7 +48,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .h1, .h2, .h3, .hero__title, .tile__title { text-wrap: balance; font-family: var(--font-display); letter-spacing: -.01em; }
 .h1 { font-size: 64px; font-weight: 500; line-height: 1.05; }
 .h2 { font-size: 44px; font-weight: 500; line-height: 1.15; }
-.h3 { font-size: 32px; font-weight: 600; line-height: 1.1; color: var(--white); }
+.h3 { font-size: 32px; font-weight: 600; line-height: 1.1; color: inherit; }
 .lead, .page ul, .page ol { font: 300 20px/1.6 var(--font-text); color: var(--secondary); }
 .small { font: 400 15px/1.6 var(--font-text); }
 .caps { font: 500 12px/1.2 var(--font-text); text-transform: uppercase; letter-spacing: .16em; }
@@ -111,13 +111,13 @@ button, input, textarea { font: inherit; color: inherit; }
 .card {
   display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
   height: 600px; padding: 32px; border-radius: var(--radius);
-  color: var(--white); overflow: hidden; position: relative;
-  background-color: var(--primary, #1C1917); background-image: var(--card-img);
+  color: var(--primary); overflow: hidden; position: relative;
+  background-color: #ebe6dd; background-image: var(--card-img);
   background-size: 100%; background-position: center bottom; background-repeat: no-repeat;
   box-shadow: 0 0 0 0 var(--accent); transition: box-shadow .2s var(--ease);
 }
 .card:hover { box-shadow: 0 0 0 2px var(--accent); }
-/* one warm-black ground for every case; per-card brand colours from inline styles are ignored */
+/* one warm sand ground for every case; per-card brand colours from inline styles are ignored */
 .card--left { background-position: left bottom; }
 .card__title { max-width: 620px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }

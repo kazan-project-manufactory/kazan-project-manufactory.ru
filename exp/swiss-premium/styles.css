@@ -112,14 +112,13 @@ button, input, textarea { font: inherit; color: inherit; }
   display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
   height: 600px; padding: 32px; border-radius: var(--radius);
   color: var(--white); overflow: hidden; position: relative;
-  background-color: var(--card-bg, #1e1e1e); background-image: var(--card-img);
+  background-color: var(--primary, #1C1917); background-image: var(--card-img);
   background-size: 100%; background-position: center bottom; background-repeat: no-repeat;
   box-shadow: 0 0 0 0 var(--accent); transition: box-shadow .2s var(--ease);
 }
 .card:hover { box-shadow: 0 0 0 2px var(--accent); }
-.card--grad { background-image: var(--card-img), var(--card-grad); background-size: 100%, cover; background-position: center bottom, center; }
+/* one warm-black ground for every case; per-card brand colours from inline styles are ignored */
 .card--left { background-position: left bottom; }
-.card--grad.card--left { background-position: left bottom, center; }
 .card__title { max-width: 620px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-block; padding: 8px 12px; border-radius: var(--radius); background: var(--white); color: var(--ink);
@@ -227,7 +226,7 @@ button, input, textarea { font: inherit; color: inherit; }
   .hero__title { font-size: 60px; }
   .hero__art svg { width: 300px; }
   .page .rec:first-of-type .h1 { font-size: 68px; }
-  .card, .card--grad { background-size: cover; }
+  .card { background-size: cover; }
 }
 @media (max-width: 959px) {
   :root { --gutter: 24px; }

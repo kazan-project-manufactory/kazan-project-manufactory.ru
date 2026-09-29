@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Disallow: /exp/
+Disallow: /qa/
+
+Sitemap: https://kazan-project-manufactory.ru/sitemap.xml

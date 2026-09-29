@@ -18,7 +18,7 @@
   --field: #f0f0f5;        /* form inputs */
   --shadow: -13px 43px 18px 0 rgba(44,44,92,.01), -7px 24px 15px 0 rgba(44,44,92,.04),
             -3px 11px 11px 0 rgba(44,44,92,.07), -1px 3px 6px 0 rgba(44,44,92,.08);
-  --radius: 24px;          /* cards; 24px below 1200 */
+  --radius: 24px;          /* cards */
   --font-display: ANS, Arial, sans-serif;
   --font-text: Onest, Arial, sans-serif;
   --wrap: 1520px;
@@ -124,8 +124,6 @@ button, input, textarea { font: inherit; color: inherit; }
 .form__fields { display: grid; gap: 12px; }
 .field { display: grid; gap: 2px; padding: 10px 20px 12px; border-radius: 12px; background: var(--field); }
 .field:focus-within { box-shadow: inset 0 0 0 2px var(--accent); }
-.field__label { font: 400 13px/1.4 var(--font-text); color: #8b8b9a; }
-.field__req { color: var(--accent); }
 .form input, .form textarea { width: 100%; padding: 0; border: 0; background: transparent; font: 400 18px/1.5 var(--font-text); }
 /* the whole field lights up instead, so the native ring inside the plate would be a second border */
 .form input:focus, .form textarea:focus { outline: none; }
@@ -135,7 +133,6 @@ button, input, textarea { font: inherit; color: inherit; }
 .form__status--ok { background: #e7f2ec; color: #1c6b45; }
 .form__status--error { background: #fdeceb; color: #b3261e; }
 .form .btn { width: 100%; }
-.form__promise { padding-left: 20px; font: 400 14px/1.5 var(--font-text); color: #6e6e85; }
 /*.form__consent { padding-left: 20px; font: 400 13px/1.5 var(--font-text); color: #8b8b9a; }*/
 .form__consent a { text-decoration: underline; }
 .form__trap { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
@@ -155,6 +152,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .page { padding-top: 132px; }
 .pill-header { padding: 20px 0 16px; }
 .pill-header { position: fixed; width: 100%; top: 0; }
+/* anchors (#form) must land below the fixed pill, not under it */
+html:has(> body.page) { scroll-padding-top: 140px; }
 .pill { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px 20px 40px; border-radius: 50px; background: var(--hero-grad); color: var(--white); }
 .page .h1 { max-width: none; }
 .rec .wrap { display: flex; flex-direction: column; gap: 48px; }
@@ -194,7 +193,6 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* ---------- Responsive (Tilda artboards: 1600 / 1200 / 960 / 640 / 480 / 320) ---------- */
 @media (max-width: 1199px) {
-  :root { --radius: 24px; }
   .h1 { font-size: 42px; }
   .h2 { font-size: 32px; }
   .h3 { font-size: 24px; }

@@ -12,6 +12,7 @@
   --bg: #f6f6f6;           /* page background */
   --white: #ffffff;
   --accent: #3939ff;       /* brand blue */
+  --hover: #d9ebeb;        /* button and nav hover */
   --hero-grad: linear-gradient(0.25turn, #3939ff 0%, #222299 100%);
   --link: #005aab;
   --field: #f0f0f5;        /* form inputs */
@@ -36,10 +37,10 @@ button, input, textarea { font: inherit; color: inherit; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 
 /* ---------- Typography (Tilda uc-typo styles) ---------- */
-.h1 { font: 400 60px/1.3 var(--font-display); }                 /* section titles */
+.h1 { font: 400 60px/1 var(--font-display); }                 /* section titles */
 .h2 { font: 400 40px/1.3 var(--font-display); }                 /* case titles */
-.h3 { font: 400 30px/1.3 var(--font-display); color: var(--white); } /* card titles */
-.lead { font: 400 24px/1.5 var(--font-text); }
+.h3 { font: 400 30px/1.1 var(--font-display); color: var(--white); } /* card titles */
+.lead, .page ul, .page ol { font: 400 24px/1.5 var(--font-text); }
 .small { font: 300 18px/1.5 var(--font-display); }
 .caps { font: 400 16px/1.2 var(--font-display); text-transform: uppercase; }
 
@@ -48,20 +49,24 @@ button, input, textarea { font: inherit; color: inherit; }
   display: inline-flex; align-items: center; justify-content: center; gap: 16px;
   padding: 26px 40px; border-radius: 50px; border: 0; cursor: pointer;
   font: 400 16px/1 var(--font-display); text-transform: uppercase; white-space: nowrap;
-  transition: opacity .2s;
+  transition: background-color .2s, color .2s;
 }
-.btn:hover { opacity: .9; }
 .btn--light { background: var(--white); color: var(--ink); }
 .btn--dark { background: var(--ink); color: var(--white); }
+.btn--light:hover { background: var(--hover); color: var(--accent); }
+.btn--dark:hover { background: var(--accent); color: var(--hover); }
 .btn--light .btn__arrow { width: 128px; height: 8px; }
+.btn__arrow path { fill: currentColor; }
 
 /* ---------- Header ---------- */
 .header { padding: 32px 0; }
 .header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .logo { width: 178px; height: 55px; }
 .nav { display: flex; align-items: center; gap: 0; }
-.nav a { padding: 10px 21px; color: var(--white); }
-.nav .btn { margin-left: 21px; padding: 26px 40px; color: var(--ink); }
+.nav a { padding: 10px 21px; }
+.nav a:not(.btn) { color: var(--white); }
+.nav a:not(.btn):hover { color: var(--hover); }
+.nav .btn { margin-left: 21px; padding: 26px 40px; }
 
 /* ---------- Hero ---------- */
 .hero { background: var(--hero-grad); color: var(--white); padding: 0 0 120px; }
@@ -99,7 +104,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .card--grad.card--left { background-position: left bottom, center; }
 .card__title { max-width: 703px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { display: inline-block; padding: 6px 16px; border-radius: 50px; background: var(--white); color: var(--ink); font: 300 18px/1.5 var(--font-display); }
+.chip { display: inline-block; padding: 6px 16px; border-radius: 50px; border: 1px solid #dbdbdb; background: var(--white); color: var(--ink); font: 300 18px/1.5 var(--font-display); }
 
 @media (min-width: 1600px) { .card { height: 720px; } }
 
@@ -120,11 +125,23 @@ button, input, textarea { font: inherit; color: inherit; }
 .panel { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
 .form { display: grid; gap: 20px; padding: 20px 20px 32px; }
 .form__fields { display: grid; gap: 12px; }
-.form input, .form textarea { width: 100%; padding: 14px 20px; border: 0; border-radius: 12px; background: var(--field); font: 400 18px/1.5 var(--font-text); }
-.form textarea { min-height: 116px; resize: vertical; }
+.field { display: grid; gap: 2px; padding: 10px 20px 12px; border-radius: 12px; background: var(--field); }
+.field:focus-within { box-shadow: inset 0 0 0 1px var(--accent); }
+.field__label { font: 400 13px/1.4 var(--font-text); color: #8b8b9a; }
+.field__req { color: var(--accent); }
+.form input, .form textarea { width: 100%; padding: 0; border: 0; background: transparent; font: 400 18px/1.5 var(--font-text); }
+/* the whole field lights up instead, so the native ring inside the plate would be a second border */
+.form input:focus, .form textarea:focus { outline: none; }
+.form textarea { min-height: 96px; resize: vertical; }
 .form input::placeholder, .form textarea::placeholder { color: #8b8b9a; }
-.form .btn { width: 100%; margin-top: 56px; }
+.form__status { padding: 12px 20px; border-radius: 12px; font: 400 16px/1.4 var(--font-text); }
+.form__status--ok { background: #e7f2ec; color: #1c6b45; }
+.form__status--error { background: #fdeceb; color: #b3261e; }
+.form .btn { width: 100%; margin-top: 24px; }
+.form__promise { padding-left: 20px; font: 400 14px/1.5 var(--font-text); color: #6e6e85; }
+.form__consent { padding-left: 20px; font: 400 13px/1.5 var(--font-text); color: #8b8b9a; }
 .form__consent a { text-decoration: underline; }
+.form__trap { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
 .contact__side { display: grid; gap: 16px; }
 .contact__card { display: grid; gap: 12px; padding: 20px 20px 24px; }
 .contact__card p + p { margin-top: 4px; }
@@ -175,22 +192,26 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 @media (max-width: 959px) {
   .hero__grid { grid-template-columns: 1fr; padding-top: 97px; }
-  .hero__art { order: -1; }
-  .hero__art svg { width: 300px; }
+  .hero__art { display: none; }
+  .nav a:not(.btn) { display: none; }
   .hero__list { margin-top: 40px; }
+  .h3 { font-size: 28px; }
   .cards, .ai__grid { grid-template-columns: 1fr; }
   .cards__col--offset { padding-top: 0; }
-  .card { height: 520px; }
+  .card { height: 700px; }
+  .card__title { max-width: none; }
   .contact__grid { grid-template-columns: 1fr; }
   .section--ai, .section--contact { padding-top: 140px; }
   .footer { margin-top: 120px; }
+  .footer .wrap { flex-direction: column; align-items: flex-start; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 @media (max-width: 639px) {
   :root { --gutter: 8px; }
   .h1 { font-size: 34px; }
   .h2 { font-size: 26px; }
   .h3 { font-size: 24px; }
-  .lead { font-size: 18px; }
+  .lead, .page ul, .page ol { font-size: 18px; }
   .hero { padding-bottom: 60px; }
   .hero__grid { padding-top: 56px; }
   .hero__title { font-size: 30px; }
@@ -199,141 +220,41 @@ button, input, textarea { font: inherit; color: inherit; }
   .hero__cta { margin-top: 48px; }
   .btn { padding: 20px 28px; }
   .nav { display: none; }
-  .hero__art { display: none; }
   .btn__arrow { display: none; }
   .header { padding: 20px 0; }
   .logo { width: 140px; height: auto; }
-  .card { height: 360px; padding: 16px; }
+  .card { height: 500px; padding: 16px; }
   .chip { font-size: 14px; }
   .section { padding-top: 60px; }
   .section--ai, .section--contact { padding-top: 120px; }
-  .footer .wrap { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .footer__links { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer .wrap { gap: 24px; }
 }
 @media (max-width: 479px) {
   .h1 { font-size: 26px; }
   .h2 { font-size: 24px; }
   .h3 { font-size: 18px; }
+  .card { height: 400px; }
   .hero__title { font-size: 20px; }
   .hero__list li { font-size: 14px; }
 }
 
 /* ======================================================================
-   exp/lenis-scroll — the whole page as one scroll gesture (lenis 1.3.26)
-   --p       0..1 progress of a pinned section title (set by scroll.js)
-   --v       -1..1 normalised scroll velocity (html)
-   --progress 0..1 page progress (html)
-   --scroll  scrollY in px (html)
+   exp/lenis-scroll (доработка 29.09) — smooth scroll + restrained velocity skew.
+   Skew is written by assets/scroll.js straight to [data-skew] columns (no page-wide
+   custom properties). Section titles: one quiet CSS scroll-driven entrance, no JS.
    ====================================================================== */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-@property --v { syntax: '<number>'; inherits: true; initial-value: 0; }
-:root { --v: 0; --progress: 0; --scroll: 0; transition: --v .25s ease-out; }
-
-/* Giant section titles */
-.giant {
-  font-size: clamp(30px, var(--giant, 11vw), 160px);
-  line-height: .95; letter-spacing: -.02em; text-wrap: balance;
-  max-width: 12ch; margin: 0;
-}
-.section--ai .giant { --giant: 8.6vw; max-width: 14ch; }
-.section--contact .giant { --giant: 8vw; max-width: 14ch; }
-.section--projects .h1 { padding-bottom: 0; }
-.sec-head { position: relative; --p: 0; }
-.sec-head__pin { position: relative; padding: 0 0 48px; }
-.sec-num {
-  position: absolute; right: 0; top: -.35em; z-index: 0; pointer-events: none;
-  font: 400 clamp(160px, 34vw, 520px)/1 var(--font-display);
-  color: transparent; -webkit-text-stroke: 1.5px var(--accent); opacity: .35;
-}
-.giant { position: relative; z-index: 1; }
-
-/* With JS: title is pinned for a screen and shrinks into the corner while the
-   section body rises over it. Without JS or with reduced motion — plain flow. */
 @media (prefers-reduced-motion: no-preference) {
-  html.js .sec-head { height: 170vh; margin-top: -60px; }
-  html.js .sec-head__pin {
-    position: sticky; top: 0; height: 100vh; padding: 0;
-    display: flex; flex-direction: column; justify-content: center;
+  @supports (animation-timeline: view()) {
+    main .h1 {
+      transform-origin: 0 100%;
+      animation: sec-title-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+    /* small travel on purpose: the title never runs into the lead/cards below it */
+    @keyframes sec-title-in {
+      from { transform: translate3d(0, 20px, 0) scale(.98); opacity: 0; }
+      to   { transform: none; opacity: 1; }
+    }
   }
-  html.js .sec-body { position: relative; z-index: 2; margin-top: -62vh; }
-  /* grid containers turn into block flow so the negative margin actually shortens the page */
-  html.js .ai, html.js .contact { display: block; }
-  html.js .ai > * + *, html.js .contact > * + * { margin-top: 48px; }
-  html.js .ai > .sec-body, html.js .contact > .sec-body { margin-top: -62vh; }
-  html.js .giant {
-    transform-origin: left center;
-    transform: translate3d(0, calc(var(--p) * -30vh), 0)
-               scale(calc(1 - var(--p) * .55))
-               skewY(calc(var(--v) * -1.5deg));
-    letter-spacing: calc(-.02em - var(--p) * .03em);
-  }
-  html.js .sec-num {
-    top: 50%; margin-top: -.5em;
-    transform: translate3d(calc(var(--p) * -18vw), calc(var(--p) * -20vh), 0) rotate(calc(var(--p) * -6deg));
-    opacity: calc(.4 - var(--p) * .4);
-  }
-  html.js .sec-head__pin::after {            /* running progress line under the title */
-    content: ""; position: absolute; left: 0; bottom: 18vh; height: 2px; width: 100%;
-    background: var(--accent); transform-origin: left; transform: scaleX(var(--p)); opacity: calc(min(1, (1 - var(--p)) * 5) * .6);
-  }
-  /* velocity → skew (classic lenis demo): cards, tiles, panels */
-  html.js .card, html.js .tile, html.js .panel {
-    transform: skewY(calc(var(--v) * 4deg)); will-change: transform;
-  }
-  html.js .cards__col--offset .card { transform: skewY(calc(var(--v) * -4deg)); }
-  html.js .card { transition: background-size .4s ease; }
-  /* hero art: light parallax + stretch with speed */
-  html.js .hero__art svg {
-    transform: translate3d(0, calc(var(--scroll) * .18px), 0) scaleY(calc(1 + var(--v) * .08));
-    transform-origin: center;
-  }
-  html.js .hero__title { transform: translate3d(0, calc(var(--scroll) * .06px), 0); }
-}
-
-/* Progress thread on the right edge: fill + section marks */
-.thread {
-  position: fixed; right: 28px; top: 10vh; bottom: 10vh; width: 2px; z-index: 50;
-  background: rgba(255,255,255,.3); color: #fff; mix-blend-mode: difference;
-}
-.thread__fill {
-  position: absolute; inset: 0; background: currentColor;
-  transform-origin: top; transform: scaleY(var(--progress));
-}
-.thread__mark {
-  position: absolute; left: 50%; top: calc(var(--at) * 100%);
-  transform: translate(-50%, -50%); display: flex; align-items: center; gap: 12px;
-  flex-direction: row-reverse; color: inherit;
-}
-.thread__mark i {
-  display: block; width: 10px; height: 10px; border-radius: 50%;
-  border: 2px solid currentColor; background: transparent; transition: transform .3s, background .3s;
-}
-.thread__mark span {
-  writing-mode: vertical-rl; transform: rotate(180deg);
-  font: 400 12px/1 var(--font-display); text-transform: uppercase; letter-spacing: .12em;
-  opacity: .55; transition: opacity .3s; white-space: nowrap;
-}
-.thread__mark:hover span, .thread__mark.is-active span { opacity: 1; }
-.thread__mark.is-active i { background: currentColor; transform: scale(1.4); }
-html.js .thread__mark { cursor: pointer; }
-
-@media (max-width: 959px) {
-  .thread { right: 10px; }
-  .thread__mark span { display: none; }
-  .sec-num { -webkit-text-stroke-width: 1px; }
-  .giant { --giant: 13vw; }
-  .section--ai .giant { --giant: 9.5vw; }
-  .section--contact .giant { --giant: 11vw; }
-}
-@media (max-width: 639px) {
-  .sec-head__pin { padding-bottom: 32px; }
-  html.js .sec-head { height: 150vh; margin-top: 0; }
-  html.js .sec-body, html.js .ai > .sec-body, html.js .contact > .sec-body { margin-top: -66vh; }
-  html.js .giant { transform: translate3d(0, calc(var(--p) * -26vh), 0) scale(calc(1 - var(--p) * .45)); }
-  html.js .sec-head__pin::after { bottom: 22vh; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .thread__fill { display: none; }
-  .thread__mark i { transition: none; }
 }

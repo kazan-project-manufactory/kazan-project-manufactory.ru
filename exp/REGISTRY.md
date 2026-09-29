@@ -1,6 +1,6 @@
 # Реестр экспериментов
 
-Каждый эксперимент — папка `exp/<slug>/` (копия страниц + свой `styles.css`, ассеты общие), живёт по адресу `https://lab.kazan-project-manufactory.ru/exp/<slug>/`. Оригинал сайта — корень. Новый эксперимент: `python3 tools/exp.py new <slug>`, после правки реестра — `python3 tools/exp.py index`.
+Каждый эксперимент — папка `exp/<slug>/` (копия страниц + свой `styles.css`, ассеты общие), живёт по адресу `https://kazan-project-manufactory.ru/exp/<slug>/` (до 29.09.2026 — `lab.kazan-project-manufactory.ru`; `exp/` закрыт от индексации: noindex на страницах + Disallow в robots.txt, Метрики нет). Оригинал сайта — корень. Новый эксперимент: `python3 tools/exp.py new <slug>`, после правки реестра — `python3 tools/exp.py index`.
 
 Статусы: `на тесте` (ждёт решения команды), `принят` (перенесён в корень/прод), `отклонён` (папка остаётся как история).
 

@@ -54,6 +54,10 @@ def new(slug):
         badge = (f'<style>{BADGE_CSS}</style>\n<a class="exp-badge" href="{orig}" title="Открыть оригинал">'
                  f'🧪 эксперимент «{slug}» · оригинал →</a>\n</body>')
         text = text.replace('</body>', badge, 1)
+        # the root is the live site: experiments stay out of search and out of the Metrika stats
+        text = re.sub(r'<script>\(function\(m,e,t,r,i,k,a\).*?</noscript>\n?', '', text, flags=re.S)
+        if 'name="robots"' not in text:
+            text = text.replace('<meta name="viewport"', '<meta name="robots" content="noindex, nofollow">\n<meta name="viewport"', 1)
         out = dst / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(text, encoding='utf-8')
@@ -75,7 +79,7 @@ def index():
         f'<br><span>{html.escape(c[4])}</span></li>\n' for c in reversed(rows))
     (EXP / 'index.html').write_text(f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Эксперименты — lab.kazan-project-manufactory.ru</title>
+<meta name="robots" content="noindex, nofollow"><title>Эксперименты — kazan-project-manufactory.ru</title>
 <link rel="stylesheet" href="/styles.css">
 <style>.exp{{max-width:900px;margin:0 auto;padding:48px 20px}}.exp li{{padding:16px 0;border-bottom:1px solid #dbdbdb}}.exp small{{color:#8b8b9a}}.exp a{{color:var(--accent)}}</style>
 </head><body><main class="exp"><h1 class="h2">Эксперименты</h1>

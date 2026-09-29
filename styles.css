@@ -127,8 +127,6 @@ button, input, textarea { font: inherit; color: inherit; }
 .form__fields { display: grid; gap: 12px; }
 .field { display: grid; gap: 2px; padding: 10px 20px 12px; border-radius: 12px; background: var(--field); }
 .field:focus-within { box-shadow: inset 0 0 0 1px var(--accent); }
-.field__label { font: 400 13px/1.4 var(--font-text); color: #8b8b9a; }
-.field__req { color: var(--accent); }
 .form input, .form textarea { width: 100%; padding: 0; border: 0; background: transparent; font: 400 18px/1.5 var(--font-text); }
 /* the whole field lights up instead, so the native ring inside the plate would be a second border */
 .form input:focus, .form textarea:focus { outline: none; }
@@ -138,7 +136,6 @@ button, input, textarea { font: inherit; color: inherit; }
 .form__status--ok { background: #e7f2ec; color: #1c6b45; }
 .form__status--error { background: #fdeceb; color: #b3261e; }
 .form .btn { width: 100%; margin-top: 24px; }
-.form__promise { padding-left: 20px; font: 400 14px/1.5 var(--font-text); color: #6e6e85; }
 .form__consent { padding-left: 20px; font: 400 13px/1.5 var(--font-text); color: #8b8b9a; }
 .form__consent a { text-decoration: underline; }
 .form__trap { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
@@ -169,9 +166,18 @@ button, input, textarea { font: inherit; color: inherit; }
 .sp { width: 100%; }
 .page .section--contact { padding-top: 0; }
 .page .footer { margin-top: 0; }
+
+/* Legal text (privacy policy): one text size, section titles in the display face */
+.legal { display: grid; gap: 16px; max-width: 960px; }
+.legal .h1 { margin-bottom: 24px; }
+.legal h2 { margin-top: 32px; font: 400 28px/1.2 var(--font-display); }
+.legal h3 { margin-top: 8px; font: 600 18px/1.5 var(--font-text); }
+.legal p, .page .legal ul { font: 400 18px/1.6 var(--font-text); overflow-wrap: anywhere; }
 @media (max-width: 959px) {
   .g[style*="flex-direction:row"] { flex-direction: column !important; }
   .rec .wrap { gap: 32px; }
+  .legal h2 { margin-top: 24px; font-size: 22px; }
+  .legal p, .page .legal ul { font-size: 16px; }
 }
 @media (max-width: 639px) {
   .pill { padding: 12px 16px; }

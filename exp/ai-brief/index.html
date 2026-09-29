@@ -93,73 +93,25 @@
 
   <section class="section section--ai" id="ai">
     <div class="wrap ai">
-      <h2 class="h1">Искусственный интеллект для&nbsp;ваших нужд</h2>
-      <p class="lead ai__intro">Соберите решение под себя: выберите, кто вы и&nbsp;какая задача&nbsp;— покажем, из&nbsp;чего оно состоит, как идут работы и&nbsp;что понадобится с&nbsp;вашей стороны.</p>
+      <h2 class="h1 ai__title">Искусственный интеллект <span class="ai__for">для&nbsp;<span class="sw" id="ai-switch"><span class="sw__slot"><span class="sw__word">музея</span></span></span></span></h2>
+      <div class="ai__spheres" id="ai-spheres" hidden>
+        <button type="button" class="ai__sphere" data-sphere="museum" aria-pressed="true">Музей</button>
+        <button type="button" class="ai__sphere" data-sphere="university" aria-pressed="false">Вуз</button>
+        <button type="button" class="ai__sphere" data-sphere="gov" aria-pressed="false">Госструктура</button>
+        <button type="button" class="ai__sphere" data-sphere="business" aria-pressed="false">Бизнес</button>
+      </div>
 
-      <div class="brief" id="brief">
-        <div class="brief__group" role="group" aria-labelledby="brief-who">
-          <p class="caps brief__label" id="brief-who">Шаг 1. Кто вы</p>
-          <div class="chips">
-            <button type="button" class="chip chip--pick" data-aud="museum" aria-pressed="true">Музей</button>
-            <button type="button" class="chip chip--pick" data-aud="university" aria-pressed="false">Вуз</button>
-            <button type="button" class="chip chip--pick" data-aud="gov" aria-pressed="false">Госструктура</button>
-            <button type="button" class="chip chip--pick" data-aud="business" aria-pressed="false">Бизнес</button>
-          </div>
-        </div>
+      <ul class="ideas" id="ai-ideas" aria-live="polite">
+        <li class="idea"><p class="idea__task">Обработка документов</p><div class="idea__cell"><p class="idea__text">Учётные карточки предметов, акты приёма на&nbsp;хранение и&nbsp;выставочная документация.</p></div></li>
+        <li class="idea"><p class="idea__task">Ассистент для&nbsp;посетителей</p><div class="idea__cell"><p class="idea__text">Навигация по&nbsp;экспозиции и&nbsp;ответы про&nbsp;билеты, часы работы и&nbsp;текущие выставки.</p></div></li>
+        <li class="idea"><p class="idea__task">Аналитика и&nbsp;прогнозы</p><div class="idea__cell"><p class="idea__text">Прогноз посещаемости по&nbsp;дням и&nbsp;выставкам&nbsp;— чтобы планировать смены, экскурсии и&nbsp;закупки.</p></div></li>
+        <li class="idea"><p class="idea__task">Генерация контента</p><div class="idea__cell"><p class="idea__text">Этикетки, анонсы выставок, описания предметов и&nbsp;посты&nbsp;— в&nbsp;едином голосе.</p></div></li>
+        <li class="idea"><p class="idea__task">Распознавание изображений</p><div class="idea__cell"><p class="idea__text">Оцифровка фондов: рукописные карточки, инвентарные номера, атрибуция по&nbsp;фотографии предмета.</p></div></li>
+      </ul>
 
-        <div class="brief__group" role="group" aria-labelledby="brief-what">
-          <p class="caps brief__label" id="brief-what">Шаг 2. Какая задача</p>
-          <div class="chips">
-            <button type="button" class="chip chip--pick" data-task="docs" aria-pressed="false">Обработка документов</button>
-            <button type="button" class="chip chip--pick" data-task="assistant" aria-pressed="true">Ассистент для&nbsp;посетителей</button>
-            <button type="button" class="chip chip--pick" data-task="analytics" aria-pressed="false">Аналитика и&nbsp;прогнозы</button>
-            <button type="button" class="chip chip--pick" data-task="content" aria-pressed="false">Генерация контента</button>
-            <button type="button" class="chip chip--pick" data-task="vision" aria-pressed="false">Распознавание изображений</button>
-          </div>
-        </div>
-
-        <div class="panel brief__result" id="brief-result" aria-live="polite">
-          <p class="brief__ln brief__kicker" style="--i:0">Музей · Ассистент для посетителей</p>
-          <p class="brief__ln brief__summary" style="--i:1">Ассистент отвечает на вопросы текстом и голосом, опираясь только на ваши материалы, а не на общие знания модели. Для музея это навигация по экспозиции и ответы про билеты, часы работы и текущие выставки.</p>
-          <div class="brief__stack">
-          <div class="brief__ln brief__unit" style="--i:2">
-          <p class="brief__term">Данные</p>
-          <p>описания залов и предметов, афиша, правила посещения</p>
-          </div>
-          <div class="brief__ln brief__unit" style="--i:3">
-          <p class="brief__term">Модель</p>
-          <p>поиск по вашей базе знаний плюс языковая модель, которая отвечает со ссылкой на источник</p>
-          </div>
-          <div class="brief__ln brief__unit" style="--i:4">
-          <p class="brief__term">Канал доставки</p>
-          <p>виджет на сайте и QR-коды в залах</p>
-          </div>
-          </div>
-          <div class="brief__cols">
-          <div class="brief__col">
-          <p class="brief__ln brief__term" style="--i:5">Этапы работ</p>
-          <ol class="brief__list brief__list--num">
-          <li class="brief__ln" style="--i:6">Собираем базу знаний из ваших материалов и отмечаем темы, на которые ассистент не отвечает</li>
-          <li class="brief__ln" style="--i:7">Настраиваем поиск и ответы со ссылкой на источник</li>
-          <li class="brief__ln" style="--i:8">Прогоняем на реальных вопросах и правим формулировки вместе с вами</li>
-          <li class="brief__ln" style="--i:9">Запускаем и смотрим статистику: о чём спрашивают и где ассистент промахнулся</li>
-          </ol>
-          </div>
-          <div class="brief__col">
-          <p class="brief__ln brief__term" style="--i:10">Что нужно от вас</p>
-          <ul class="brief__list">
-          <li class="brief__ln" style="--i:11">Материалы: описания залов и предметов, афиша, правила посещения</li>
-          <li class="brief__ln" style="--i:12">Человек, который согласует тон и границы ответов</li>
-          <li class="brief__ln" style="--i:13">Место для виджета на сайте</li>
-          </ul>
-          </div>
-          </div>
-        </div><!--/result-->
-
-        <div class="brief__cta">
-          <a class="btn btn--dark" id="brief-go" href="#form">Обсудить это решение</a>
-          <p class="brief__note">Собранное описание уйдёт в&nbsp;форму ниже&nbsp;— останется оставить контакт. Нужной задачи в&nbsp;списке нет? Напишите своими словами, разберёмся.</p>
-        </div>
+      <div class="ai__cta">
+        <p class="lead">Не нашли нужного решения?<br>Напишите нам – разработаем под ваши задачи</p>
+        <a class="btn btn--dark" id="ai-go" href="#form"><span>Обсудить для&nbsp;<span class="ai__go-word">музея</span></span></a>
       </div>
     </div>
   </section>

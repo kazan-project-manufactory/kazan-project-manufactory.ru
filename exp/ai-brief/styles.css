@@ -108,36 +108,62 @@ button, input, textarea { font: inherit; color: inherit; }
 
 @media (min-width: 1600px) { .card { height: 720px; } }
 
-/* AI section — the living brief: two rows of choices and the assembled solution */
-.ai { display: grid; gap: 32px; }
-.ai__intro { max-width: 1034px; }
-.brief { display: grid; gap: 24px; }
-.brief__group { display: grid; gap: 12px; }
-.brief__label { color: #8b8b9a; }
-.chip--pick { padding: 10px 20px; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
-.chip--pick:hover { border-color: var(--accent); color: var(--accent); }
-.chip--pick[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--white); }
-.chip--pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.brief__result { display: grid; gap: 24px; padding: 28px 32px 32px; }
-.brief__kicker { font: 400 16px/1.2 var(--font-display); text-transform: uppercase; color: var(--accent); }
-.brief__summary { font: 400 24px/1.45 var(--font-text); }
-.brief__term { font: 400 13px/1.2 var(--font-display); text-transform: uppercase; letter-spacing: .04em; color: #8b8b9a; }
-.brief__stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 36px; padding: 20px; border-radius: 16px; background: var(--field); }
-.brief__unit { display: grid; gap: 4px; align-content: start; position: relative; }
-/* data -> model -> channel: the arrow lives in CSS so the markup stays semantic */
-.brief__unit + .brief__unit::before { content: "\2192"; position: absolute; left: -24px; top: 18px; color: #8b8b9a; }
-.brief__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 36px; align-items: start; }
-.brief__col { display: grid; gap: 10px; align-content: start; }
-.brief__list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: brief; }
-.brief__list li { position: relative; padding-left: 28px; counter-increment: brief; }
-.brief__list li::before { content: "\2014"; position: absolute; left: 0; color: #8b8b9a; }
-.brief__list--num li::before { content: counter(brief) "."; }
-.brief__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; padding-top: 8px; }
-.brief__note { max-width: 480px; font: 400 14px/1.5 var(--font-text); color: #6e6e85; }
-/* The result is typed in line by line: 14 lines at 45ms is under a second, and nothing moves after that. */
-.brief__ln { animation: brief-in .18s ease-out both; animation-delay: calc(var(--i, 0) * 45ms); }
-@keyframes brief-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .brief__ln { animation: none; } }
+/* AI section — "AI for <sphere>": the last word of the title is the only control,
+   five quiet task lines under it re-read themselves for the chosen sphere. */
+.ai { display: grid; grid-template-columns: minmax(0, 1fr); }
+.ai__title { max-width: 1200px; }
+.ai__for { display: block; }  /* the switching word always starts at the same spot */
+
+/* The word: a button inside the heading, dotted underline + a small arrow hint */
+.sw { display: inline; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; white-space: nowrap; }
+.sw__slot {
+  display: inline-block; vertical-align: top; position: relative; overflow: hidden; white-space: nowrap;
+  /* room for descenders and the underline without growing the line box */
+  padding-bottom: .26em; margin-bottom: -.26em;
+  transition: width .5s cubic-bezier(.2,.7,.2,1);
+}
+.sw__word { display: inline-block; }
+.ai--live .sw__word { text-decoration: underline dotted; text-decoration-thickness: 2px; text-underline-offset: .14em; text-decoration-color: #b4b4c8; transition: color .2s, text-decoration-color .2s; }
+.sw__hint { display: inline-block; width: .34em; height: .34em; margin-left: .14em; vertical-align: .08em; color: var(--accent); transition: transform .3s ease; }
+.sw:hover .sw__word, .sw:focus-visible .sw__word { color: var(--accent); text-decoration-color: var(--accent); }
+.sw:hover .sw__hint { transform: translateX(.08em); }
+.sw:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
+
+/* Four quiet marks under the title — where you are, and a direct jump */
+.ai__spheres { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 32px; }
+.ai__spheres[hidden] { display: none; }
+.ai__sphere { padding: 4px 0; border: 0; background: none; cursor: pointer; font: 400 16px/1.2 var(--font-display); text-transform: uppercase; color: #8b8b9a; transition: color .2s; }
+.ai__sphere:hover { color: var(--ink); }
+.ai__sphere[aria-pressed="true"] { color: var(--accent); }
+.ai__sphere:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+/* Task lines: a ruled list, task on the left, one sentence for the sphere on the right */
+.ideas { margin-top: 56px; border-top: 1px solid #dbdbdb; }
+.idea { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 40px; padding: 28px 0 30px; border-bottom: 1px solid #dbdbdb; }
+.idea__task { font: 400 28px/1.15 var(--font-display); }
+.idea__cell { position: relative; overflow: hidden; }
+.idea__text { font: 400 22px/1.45 var(--font-text); max-width: 760px; }
+
+/* The swap: old piece leaves upwards under the mask, the new one rises from below
+   (the new one starts ~140ms later, so two lines never sit on top of each other) */
+.sw__word.is-out { position: absolute; left: 0; top: 0; }
+.idea__text.is-out, .idea__text--probe { position: absolute; left: 0; top: 0; width: 100%; }
+.idea__text--probe { visibility: hidden; }
+.is-out { animation: ai-out .34s cubic-bezier(.5,0,.9,.4) both; }
+.is-in { animation: ai-in .52s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes ai-out { 70% { opacity: 0; } to { transform: translateY(-70%); opacity: 0; } }
+@keyframes ai-in { from { transform: translateY(70%); opacity: 0; } 30% { opacity: 0; } }
+.sw__word.is-out { animation-name: ai-word-out; }
+.sw__word.is-in { animation-name: ai-word-in; }
+@keyframes ai-word-out { to { transform: translateY(-80%); opacity: 0; } }
+@keyframes ai-word-in { from { transform: translateY(90%); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .sw__slot, .sw__hint { transition: none; }
+  .is-out, .is-in { animation: none; }
+}
+
+.ai__cta { display: grid; gap: 32px; justify-items: start; padding-top: 64px; }
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Contact */
 .contact { display: grid; gap: 48px; }
@@ -218,8 +244,8 @@ button, input, textarea { font: inherit; color: inherit; }
   .hero__list { margin-top: 40px; }
   .h3 { font-size: 28px; }
   .cards { grid-template-columns: 1fr; }
-  .brief__stack, .brief__cols { grid-template-columns: 1fr; }
-  .brief__unit + .brief__unit::before { content: none; }
+  .idea { grid-template-columns: 1fr; padding: 24px 0 26px; }
+  .idea__task { font-size: 24px; }
   .cards__col--offset { padding-top: 0; }
   .card { height: 700px; }
   .card__title { max-width: none; }
@@ -248,10 +274,15 @@ button, input, textarea { font: inherit; color: inherit; }
   .logo { width: 140px; height: auto; }
   .card { height: 500px; padding: 16px; }
   .chip { font-size: 14px; }
-  .chip--pick { padding: 12px 18px; }
-  .brief__result { gap: 20px; padding: 20px 16px 24px; }
-  .brief__summary { font-size: 18px; }
-  .brief__cta .btn { width: 100%; }
+  .ai__spheres { gap: 6px 20px; margin-top: 24px; }
+  .ai__sphere { font-size: 14px; }
+  .ideas { margin-top: 36px; }
+  .idea { padding: 20px 0 22px; }
+  .idea__task { font-size: 20px; }
+  .idea__text { font-size: 17px; }
+  .ai--live .sw__word { text-decoration-thickness: 1px; }
+  .ai__cta { padding-top: 40px; }
+  .ai__cta .btn { width: 100%; white-space: normal; text-align: center; line-height: 1.2; min-height: calc(2.4em + 40px); }  /* same height for every sphere, even when the word wraps */
   .section { padding-top: 60px; }
   .section--ai, .section--contact { padding-top: 120px; }
   .footer .wrap { gap: 24px; }

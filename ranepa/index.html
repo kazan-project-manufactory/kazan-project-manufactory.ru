@@ -184,22 +184,18 @@
       <form class="panel form" id="lead-form">
         <div class="form__fields">
           <label class="field">
-            <span class="field__label">Имя</span>
-            <input type="text" name="name" autocomplete="name">
+            <input type="text" name="name" placeholder="Имя" aria-label="Имя" autocomplete="name">
           </label>
           <label class="field">
-            <span class="field__label">Почта, телефон или мессенджер <span class="field__req" aria-hidden="true">*</span></span>
-            <input type="text" name="contact" autocomplete="email" inputmode="email" required aria-required="true">
+            <input type="text" name="contact" placeholder="Почта, телефон или мессенджер" aria-label="Почта, телефон или мессенджер" autocomplete="email" inputmode="email" required aria-required="true">
           </label>
           <label class="field">
-            <span class="field__label">Задача</span>
-            <textarea name="task" placeholder="Например: нужен сайт музея к&nbsp;открытию выставки в&nbsp;марте"></textarea>
+            <textarea name="task" placeholder="Краткое описание задачи" aria-label="Краткое описание задачи"></textarea>
           </label>
         </div>
         <div class="form__trap" aria-hidden="true"><input type="text" name="form-spec-comments" tabindex="-1" autocomplete="off"></div>
         <p class="form__status" role="status" aria-live="polite" hidden></p>
-        <button class="btn btn--dark" type="submit">Отправить заявку</button>
-        <p class="form__promise">Ответим в&nbsp;течение рабочего дня: напишем на&nbsp;почту, уточним детали и&nbsp;предложим, как двигаться</p>
+        <button class="btn btn--dark" type="submit">Отправить</button>
         <p class="form__consent">Нажимая на&nbsp;кнопку, вы соглашаетесь с <a href="/privacypolicy/">политикой обработки персональных данных</a></p>
       </form>
       <div class="contact__side">

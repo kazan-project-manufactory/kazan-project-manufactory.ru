@@ -1,0 +1,434 @@
+/* kazan-project-manufactory.ru — static rebuild of the Tilda site.
+   Tokens come from the Tilda Zero Block export (extract/_summary.json, DESIGN.md). */
+
+@font-face { font-family: ANS; src: url("/assets/fonts/ANS-Regular.woff") format("woff"); font-weight: 300 400; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestLight1602-hint.woff") format("woff"); font-weight: 300; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestRegular1602-hin.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestMedium1602-hint.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: Onest; src: url("/assets/fonts/OnestBold1602-hint.woff") format("woff"); font-weight: 600 700; font-display: swap; }
+
+:root {
+  --ink: #1e1e3d;          /* headings, body text, dark buttons, footer */
+  --bg: #f6f6f6;           /* page background */
+  --white: #ffffff;
+  --accent: #3939ff;       /* brand blue */
+  --hover: #d9ebeb;        /* button and nav hover */
+  --hero-grad: linear-gradient(0.25turn, #3939ff 0%, #222299 100%);
+  --link: #005aab;
+  --field: #f0f0f5;        /* form inputs */
+  --shadow: -13px 43px 18px 0 rgba(44,44,92,.01), -7px 24px 15px 0 rgba(44,44,92,.04),
+            -3px 11px 11px 0 rgba(44,44,92,.07), -1px 3px 6px 0 rgba(44,44,92,.08);
+  --radius: 24px;          /* cards */
+  --font-display: ANS, Arial, sans-serif;
+  --font-text: Onest, Arial, sans-serif;
+  --wrap: 1520px;
+  --gutter: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.4 var(--font-text); }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+button, input, textarea { font: inherit; color: inherit; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- Typography (Tilda uc-typo styles) ---------- */
+.h1 { font: 400 60px/1 var(--font-display); max-width: 1080px;}                 /* section titles */
+.h2 { font: 400 40px/1.1 var(--font-display); }                 /* case titles */
+.h3 { font: 400 30px/1.1 var(--font-display); color: var(--white); } /* card titles */
+.lead, .page ul, .page ol { font: 400 24px/1.5 var(--font-text); }
+.small { font: 300 18px/1.5 var(--font-display); }
+.caps { font: 400 16px/1.2 var(--font-display); text-transform: uppercase; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 16px;
+  padding: 20px 36px; border-radius: 50px; border: 0; cursor: pointer;
+  font: 400 16px/1 var(--font-display); text-transform: uppercase; white-space: nowrap;
+  transition: background-color .2s, color .2s;
+}
+.btn--light { background: var(--white); color: var(--ink); }
+.btn--dark { background: var(--ink); color: var(--white); }
+.btn--light:hover { background: var(--hover); color: var(--accent); }
+.btn--dark:hover { background: var(--accent); color: var(--hover); }
+.btn--light .btn__arrow { width: 128px; height: 8px; }
+.btn__arrow path { fill: currentColor; }
+
+/* ---------- Header ---------- */
+.header { padding: 24px 0; }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo { width: 178px; height: 55px; }
+.nav { display: flex; align-items: center; gap: 0; }
+.nav a { padding: 10px 21px; }
+.nav a:not(.btn) { color: var(--white); }
+.nav a:not(.btn):hover { color: var(--hover); }
+.nav .btn { margin-left: 21px; padding: 20px 36px;}
+
+/* ---------- Hero ---------- */
+.hero { background: var(--hero-grad); color: var(--white); padding: 0 0 120px; margin-bottom: 120px;}
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 64px; align-items: center; }
+.hero__title { font: 400 44px/1.2 var(--font-display); text-transform: uppercase; max-width: 720px; }
+.hero__list { margin: 40px 0 0; display: grid; gap: 16px; }
+.hero__list li { display: flex; align-items: center; gap: 15px; font: 400 20px/1.2 var(--font-display); text-transform: uppercase; }
+.hero__list svg { flex: 0 0 16px; width: 16px; height: 16px; }
+.hero__cta { margin-top: 60px; }
+.hero__art { display: flex; justify-content: center; align-items: center; }
+.hero__art svg { width: 480px; height: auto; }
+
+/* ---------- Sections ---------- */
+.section { padding-top: 32px; padding-bottom: 120px;}
+.section--contact { padding-bottom: 0px; }
+.section--projects .h1 { padding-bottom: 40px; }
+
+/* Project cards: two columns, right column offset by 160px like on Tilda */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.cards__col { display: grid; gap: 16px; }
+.cards__col--offset { padding-top: 160px; }
+.card {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  height: 600px; padding: 24px; border-radius: var(--radius); border: 1px solid #dbdbdb;
+  color: var(--white); overflow: hidden; position: relative;
+  background-color: var(--card-bg, #1e1e1e); background-image: var(--card-img);
+  background-size: 100%; background-position: center bottom; background-repeat: no-repeat;
+  box-shadow: var(--shadow); transition: background-size .4s ease;
+}
+.card:hover { background-size: 110%; }
+.card--grad { background-image: var(--card-img), var(--card-grad); background-size: 100%, cover; background-position: center bottom, center; }
+.card--grad:hover { background-size: 110%, cover; }
+.card__title { max-width: 703px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-block; padding: 6px 16px; border-radius: 50px; border: 1px solid #dbdbdb; background: var(--white); color: var(--ink); font: 300 18px/1.5 var(--font-display); }
+
+@media (min-width: 1600px) { .card { height: 720px; } }
+
+/* AI section */
+.ai { display: grid; gap: 32px; }
+.ai__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.ai__col { display: grid; gap: 16px; }
+.tile { display: flex; gap: 16px; align-items: flex-start; padding: 16px 20px 20px; border-radius: 16px; background: var(--white); box-shadow: var(--shadow); }
+.tile__emoji { font: 600 24px/1.5 var(--font-text); flex: 0 0 26px; }
+.tile__body { display: grid; gap: 8px; padding-top: 4px; }
+.tile__title { font-weight: 600; }
+.ai__cta { display: grid; gap: 32px; justify-items: start; }
+
+/* Contact */
+.contact { display: grid; gap: 32px; }
+.contact__head { display: grid; gap: 16px; max-width: 1034px; }
+.contact__grid { display: grid; grid-template-columns: 1fr 460px; gap: 16px; align-items: start; }
+.panel { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.form { display: grid; gap: 12px; padding: 20px 20px 32px; }
+.form__fields { display: grid; gap: 12px; }
+.field { display: grid; gap: 2px; padding: 10px 20px 12px; border-radius: 12px; background: var(--field); }
+.field:focus-within { box-shadow: inset 0 0 0 2px var(--accent); }
+.form input, .form textarea { width: 100%; padding: 0; border: 0; background: transparent; font: 400 18px/1.5 var(--font-text); }
+/* the whole field lights up instead, so the native ring inside the plate would be a second border */
+.form input:focus, .form textarea:focus { outline: none; }
+.form textarea { min-height: 96px; resize: vertical; }
+.form input::placeholder, .form textarea::placeholder { color: #8b8b9a; }
+.form__status { padding: 12px 20px; border-radius: 12px; font: 400 16px/1.4 var(--font-text); }
+.form__status--ok { background: #e7f2ec; color: #1c6b45; }
+.form__status--error { background: #fdeceb; color: #b3261e; }
+.form .btn { width: 100%; }
+/*.form__consent { padding-left: 20px; font: 400 13px/1.5 var(--font-text); color: #8b8b9a; }*/
+.form__consent a { text-decoration: underline; }
+.form__trap { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
+.contact__side { display: grid; gap: 16px; }
+.contact__side a { text-decoration: underline; }
+.contact__card { display: grid; gap: 12px; padding: 20px 20px 24px; }
+.contact__card p + p { margin-top: 4px; }
+
+/* Footer */
+.footer { margin-top: 180px; padding: 40px 0 48px; background: var(--ink); color: var(--white); }
+.footer a { text-decoration: underline; }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.footer__links { display: flex; gap: 32px; align-items: center; }
+
+
+/* ---------- Case pages (generated by tools/build_page.py) ---------- */
+.page { padding-top: 132px; }
+.pill-header { padding: 20px 0 16px; }
+.pill-header { position: fixed; width: 100%; top: 0; }
+/* anchors (#form) must land below the fixed pill, not under it */
+html:has(> body.page) { scroll-padding-top: 140px; }
+.pill { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px 20px 40px; border-radius: 50px; background: var(--hero-grad); color: var(--white); }
+.page .h1 { max-width: none; }
+.rec .wrap { display: flex; flex-direction: column; gap: 48px; }
+.g { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.g .g { width: 100%; }
+.g > :where(h1, h2, h3, p, img) { width: 100%; }
+.g[style*="flex-direction:row"] > * { flex: 1 1 0; min-width: 0; }
+.g[style*="flex-wrap"] > * { flex: 0 1 auto; }
+.pic { width: 100%; height: auto; border-radius: var(--radius); }
+.h2.accent { color: var(--accent); }
+.strong { font-weight: 600; }
+.page ul, .page ol { list-style: disc; padding-left: 28px; }
+.page p p { display: inline; }
+.sp { width: 100%; }
+.page .section--contact { padding-top: 0; }
+.page .footer { margin-top: 0; }
+
+
+/* Legal text (privacy policy): one text size, section titles in the display face */
+.legal { display: grid; gap: 16px; max-width: 960px; }
+.legal .h1 { margin-bottom: 24px; }
+.legal h2 { margin-top: 32px; font: 400 28px/1.2 var(--font-display); }
+.legal h3 { margin-top: 8px; font: 600 18px/1.5 var(--font-text); }
+.legal p, .page .legal ul { font: 400 18px/1.6 var(--font-text); overflow-wrap: anywhere; }
+
+@media (max-width: 959px) {
+  .g[style*="flex-direction:row"] { flex-direction: column !important; }
+  .rec .wrap { gap: 32px; }
+  .legal h2 { margin-top: 24px; font-size: 22px; }
+  .legal p, .page .legal ul { font-size: 16px; }
+}
+@media (max-width: 639px) {
+  .pill { padding: 12px 16px; }
+  .sp { height: 0 !important; }
+  .rec { padding-top: 24px !important; padding-bottom: 8px !important; }
+}
+
+/* ---------- Responsive (Tilda artboards: 1600 / 1200 / 960 / 640 / 480 / 320) ---------- */
+@media (max-width: 1199px) {
+  .h1 { font-size: 42px; }
+  .h2 { font-size: 32px; }
+  .h3 { font-size: 24px; }
+  .hero__list li { font-size: 16px; }
+  .lead, .page ul, .page ol { font-size: 20px; }
+  .card:hover { background-size: 100%; }
+  .chip { font-size: 16px; }
+  /*.hero__grid { padding-top: 140px; }*/
+  .hero__title { font-size: 36px; }
+  .hero__art svg { width: 380px; }
+  .card { height: 500px; }
+  .contact__grid { grid-template-columns: 1fr 1fr; }
+  .footer .wrap { flex-direction: column; align-items: flex-start; gap: 20px;}
+}
+@media (max-width: 959px) {
+  .h3 { font-size: 22px; }
+  .hero { padding-bottom: 80px; }
+  .hero__grid { grid-template-columns: 1fr; padding-top: 48px;}
+  .hero__title { max-width: none;}
+  .hero__art { display: none; }
+  .nav a:not(.btn) { display: none; }
+  .hero__list { margin-top: 32px; }
+  .hero__cta { margin-top: 48px; }
+  /*.h3 { font-size: 28px; }*/
+  .ai__grid { grid-template-columns: 1fr; }
+  .card { padding: 16px; height: 440px;}
+  .card__title { max-width: none; }
+  .footer { margin-top: 120px; }
+  .footer__links { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 719px) {
+  .cards { grid-template-columns: 1fr; }
+  .cards__col--offset { padding-top: 0px; }
+  .card { height: 520px; }
+}
+@media (max-width: 639px) {
+  :root { --gutter: 8px; }
+  .h1 { font-size: 30px; }
+  .h2 { font-size: 26px; }
+  .h3 { font-size: 22px; }
+  .lead, .page ul, .page ol { font-size: 18px; }
+  .header { padding: 16px 0; }
+  .hero { padding-bottom: 60px; margin-bottom: 80px; }
+  .hero__grid { padding-top: 56px; }
+  .hero__title { font-size: 30px; }
+  .hero__list li { font-size: 16px; }
+  .hero__list { gap: 14px; }
+  .hero__cta { display: flex; }
+  .nav .btn { padding: 20px 24px; }
+  .btn { font-size: 14px; padding: 20px 24px; }
+  .btn__arrow { display: none; }
+  .section { padding-bottom: 80px; }
+  .section--contact { padding-bottom: 0px; }
+  .section--projects .h1 { padding-bottom: 24px; }
+  .card { height: 500px; }
+  .chip { font-size: 14px; }
+  .contact__grid { grid-template-columns: 1fr; }
+  .footer .wrap { gap: 24px; }
+}
+@media (max-width: 579px) {
+.card { height: 460px; }
+}
+@media (max-width: 479px) {
+  .h1 { font-size: 26px; }
+  .h2 { font-size: 24px; }
+  .h3 { font-size: 18px; }
+  .logo { width: 140px; height: auto; }
+  .nav .btn { padding: 16px 24px; }
+  .btn { padding: 16px 24px; }
+  .card { height: 400px; }
+  .hero__title { font-size: 20px; }
+  .hero__list li { font-size: 14px; }
+}
+
+
+/* ==========================================================================
+   Experiment «case-exposition»: a case page as an exhibition.
+   Every picture is an exhibit in a passe-partout (white mat, thin ink frame);
+   next to it a label — the section title in caps ANS, the lead as a small Onest
+   explication. Label and exhibit swap sides hall by hall (4 / 8 of 12 columns).
+   An exhibit "switches its light on" as it reaches the middle of the screen:
+   a veil (opacity .1 → 0 ≈ brightness .9 → 1) and the brand shadow (0 → 1),
+   both opacity-only on pseudo-elements, driven by a CSS view timeline.
+   Without support / with reduced motion the light is simply on.
+   ========================================================================== */
+.expo {
+  --cols: 12;
+  --col-gap: 32px;
+  --mat: clamp(12px, 3.6vw, 56px);          /* passe-partout field; the bottom one is heavier, as framers do */
+  --frame-line: 1px solid var(--ink);
+  --frame-r: 3px;
+  --hall-gap: clamp(88px, 11vw, 168px);     /* air between halls */
+  --label-w: 4;
+  --light: 0 34px 60px -28px rgba(30,30,61,.38), 0 10px 22px -10px rgba(30,30,61,.16);
+}
+.expo :is(.cover, .hall) .wrap { max-width: 1440px; }   /* the halls only; pill, form and footer keep the site width */
+
+/* ---------- Entrance: title and the poster ---------- */
+.expo .cover .wrap { display: grid; gap: 48px; padding-top: 48px; }
+.expo .cover__text { display: grid; gap: 20px; max-width: 1180px; }
+.expo .cover .h1 { text-wrap: balance; }
+.expo .cover .lead { max-width: 46rem; text-wrap: pretty; }
+
+/* ---------- Exhibit: mat + frame ---------- */
+.exhibit { margin: 0; position: relative; view-timeline: --exhibit block; }
+.frame {
+  position: relative; isolation: isolate;
+  padding: var(--mat) var(--mat) calc(var(--mat) * 1.3); background: var(--white);
+  border: var(--frame-line); border-radius: var(--frame-r);
+}
+.frame img { display: block; width: 100%; height: auto; }
+.frame--diptych { display: grid; grid-template-columns: 1fr 1fr; gap: var(--mat); align-items: center; }
+.frame--scroll { display: grid; gap: 0; }   /* slices of one long page hang as one scroll */
+
+/* the light: shadow behind the frame, veil over it */
+.frame::after {
+  content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit;
+  box-shadow: var(--light); pointer-events: none;
+}
+.frame::before {
+  content: ""; position: absolute; inset: -1px; z-index: 2; border-radius: inherit;
+  background: var(--ink); opacity: 0; pointer-events: none;
+}
+
+/* ---------- Label ---------- */
+.label { display: grid; gap: 14px; align-content: start; padding-top: 18px; border-top: var(--frame-line); }
+.label__title {
+  font: 400 26px/1.15 var(--font-display); text-transform: uppercase; letter-spacing: .03em;
+  text-wrap: balance; overflow-wrap: break-word;
+}
+.label p, .expo .label ul, .hall__text p, .expo .hall__text ul, .finale__text p, .expo .finale__text ul { text-wrap: pretty; }
+.label p, .expo .label ul { font: 400 17px/1.6 var(--font-text); }
+.expo .label ul, .expo .finale__text ul, .expo .hall__text ul { padding-left: 1.1em; display: grid; gap: 6px; }
+.label strong, .finale__text strong { font-weight: 500; }
+
+/* ---------- Hall: label beside the works, sides alternate ---------- */
+.hall { padding-top: var(--hall-gap); }
+.stand {
+  display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  column-gap: var(--col-gap); align-items: center;
+}
+.stand + .stand { margin-top: clamp(48px, 7vw, 112px); }
+.stand > .label { grid-column: 1 / span var(--label-w); grid-row: 1; }
+.stand__works { grid-column: calc(var(--label-w) + 1) / -1; grid-row: 1; display: grid; gap: clamp(28px, 3.4vw, 56px); }
+.stand--right > .label { grid-column: calc(var(--cols) - var(--label-w) + 1) / -1; }
+.stand--right > .stand__works { grid-column: 1 / span calc(var(--cols) - var(--label-w)); }
+/* a stand whose works run long keeps its label at the top edge of the first exhibit */
+.stand:has(.exhibit + .exhibit, .exhibit--tall) { align-items: start; }
+.stand:has(.exhibit + .exhibit, .exhibit--tall) > .label { margin-top: 0; }
+/* wide: the work takes the whole wall, the label hangs under it on its side */
+.stand--wide > .stand__works { grid-column: 1 / -1; grid-row: 1; }
+.stand--wide > .label { grid-row: 2; margin-top: 32px; }
+
+/* ---------- Opening wall text (halls without pictures) ---------- */
+.hall--text .wrap {
+  display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); column-gap: var(--col-gap);
+}
+.hall--text .label__title { grid-column: 1 / span var(--label-w); padding-top: 18px; border-top: var(--frame-line); align-self: start; }
+.hall__text { grid-column: calc(var(--label-w) + 1) / -1; display: grid; gap: 18px; max-width: 42rem; padding-top: 18px; border-top: var(--frame-line); }
+.hall__text p, .expo .hall__text ul { font: 400 21px/1.55 var(--font-text); }
+.hall--text + .hall--text { padding-top: clamp(40px, 5vw, 72px); }
+
+/* ---------- Final hall: the result, a dark room ---------- */
+.hall--result { padding-top: var(--hall-gap); }
+.finale {
+  --frame-line: 1px solid rgba(255,255,255,.28);
+  --light: 0 0 0 1px rgba(255,255,255,.06), 0 40px 110px -40px rgba(140,140,255,.45);
+  display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); column-gap: var(--col-gap);
+  row-gap: clamp(40px, 6vw, 88px);
+  padding: clamp(36px, 6.5vw, 104px) clamp(20px, 5vw, 80px);
+  background: var(--ink); color: var(--white); border-radius: 32px;
+}
+.finale__label { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; row-gap: 24px; }
+.finale__label .label__title { grid-column: 1 / span var(--label-w); padding-top: 18px; border-top: var(--frame-line); align-self: start; }
+.finale__text { grid-column: calc(var(--label-w) + 1) / -1; padding-top: 18px; border-top: var(--frame-line); max-width: 44rem; }
+.finale__text p, .expo .finale__text ul { font: 400 20px/1.55 var(--font-text); }
+.finale__text ul { gap: 12px !important; }
+.hall__works { grid-column: 2 / span 10; display: grid; gap: clamp(28px, 3.4vw, 56px); }
+.hall__works:has(.exhibit--tall) { grid-column: 3 / span 8; }
+.finale .frame { border-color: transparent; }
+
+.sp--form { height: 210px; }
+
+/* ---------- The light switch ---------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .exhibit .frame::before {
+      animation: expo-veil linear both;
+      animation-timeline: --exhibit;
+      animation-range: entry 15% cover 50%;
+    }
+    .exhibit .frame::after {
+      animation: expo-light linear both;
+      animation-timeline: --exhibit;
+      animation-range: entry 15% cover 50%;
+    }
+    /* a long scroll lights up when its top edge reaches the middle, not its centre */
+    .exhibit--tall .frame::before, .exhibit--tall .frame::after { animation-range: entry 5% entry 55%; }
+    .cover .frame::before, .cover .frame::after { animation: none; }
+  }
+}
+@keyframes expo-veil { from { opacity: .1; } to { opacity: 0; } }
+@keyframes expo-light { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199px) {
+  .expo { --col-gap: 24px; --label-w: 5; }
+  .label__title { font-size: 22px; }
+  .label p, .expo .label ul { font-size: 16px; }
+  .hall__text p, .expo .hall__text ul { font-size: 19px; }
+  .finale__text p, .expo .finale__text ul { font-size: 18px; }
+}
+@media (max-width: 959px) {
+  .stand, .hall--text .wrap, .finale, .finale__label { display: block; }
+  .stand > .label, .stand--wide > .label { margin: 0 0 24px; }
+  .stand--wide > .label { margin-top: 0; }
+  .stand--wide { display: flex; flex-direction: column; }
+  .stand--wide > .label { order: -1; }
+  .hall__text, .finale__text { margin-top: 16px; padding-top: 0; border-top: 0; max-width: none; }
+  .finale__label { margin-bottom: 32px; }
+  .finale { border-radius: 24px; }
+  .hall__works > * + *, .stand__works { display: grid; }
+}
+@media (max-width: 639px) {
+  .expo { --mat: 10px; --hall-gap: 72px; }
+  .expo .cover .wrap { padding-top: 24px; gap: 28px; }
+  .frame--diptych { grid-template-columns: 1fr; }
+  .label { gap: 12px; padding-top: 14px; }
+  .label__title { font-size: 20px; }
+  .hall--text .label__title { padding-top: 14px; }
+  .hall__text p, .expo .hall__text ul { font-size: 17px; }
+  .finale__text p, .expo .finale__text ul { font-size: 16px; }
+  .finale { padding: 28px 16px 16px; border-radius: 24px; }
+  .expo .sp--form { height: 96px !important; }
+  .stand + .stand { margin-top: 56px; }
+}
+
+/* exhibits are positioned (the light lives on them), so the fixed pill has to stay above them */
+.expo .pill-header { z-index: 10; }

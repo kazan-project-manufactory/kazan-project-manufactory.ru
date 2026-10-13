@@ -50,6 +50,7 @@ def new(slug):
         text = src.read_text(encoding='utf-8')
         # root-relative links/forms stay inside the experiment; shared assets stay shared
         text = re.sub(r'((?:href|src|action)=")/(?!assets/|exp/)', r'\g<1>' + base, text)
+        text = re.sub(r'(http-equiv="refresh" content="\d+; url=)/(?!assets/|exp/)', r'\g<1>' + base, text)
         orig = '/' + (str(rel.parent) + '/' if rel.parent != Path('.') else '')
         badge = (f'<style>{BADGE_CSS}</style>\n<a class="exp-badge" href="{orig}" title="Открыть оригинал">'
                  f'🧪 эксперимент «{slug}» · оригинал →</a>\n</body>')

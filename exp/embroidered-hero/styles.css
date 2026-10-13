@@ -69,63 +69,15 @@ button, input, textarea { font: inherit; color: inherit; }
 .nav .btn { margin-left: 21px; padding: 20px 36px;}
 
 /* ---------- Hero ---------- */
-/* Poster: the bird stands on the bottom edge of the screen, the text is its caption */
-.hero { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; background: var(--hero-grad); color: var(--white); margin-bottom: 120px; }
-.hero__grid { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding-top: 48px; padding-bottom: 80px; }
-.hero__copy { position: relative; display: flex; flex-direction: column; }
+.hero { background: var(--hero-grad); color: var(--white); padding: 0 0 120px; margin-bottom: 120px;}
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 64px; align-items: center; }
 .hero__title { font: 400 44px/1.2 var(--font-display); text-transform: uppercase; max-width: 720px; }
-.hero__list { margin: auto 0 0; padding-top: 48px; display: grid; gap: 16px; }
+.hero__list { margin: 40px 0 0; display: grid; gap: 16px; }
 .hero__list li { display: flex; align-items: center; gap: 15px; font: 400 20px/1.2 var(--font-display); text-transform: uppercase; }
-.hero__list svg { flex: 0 0 16px; width: 16px; height: 16px; overflow: visible; }
-.hero__cta { margin-top: 56px; align-self: flex-start; }
-.hero__art { position: absolute; bottom: 0; right: max(var(--gutter), (100% - var(--wrap)) / 2 + var(--gutter)); pointer-events: none; }
-/* 722×854 viewBox; the plinth (bottom 7 %) goes under the edge */
-.hero__art svg { width: min((100vh - 40px) * .845, 50vw - 40px, var(--wrap) / 2 - 60px); width: min((100svh - 40px) * .845, 50vw - 40px, var(--wrap) / 2 - 60px); height: auto; overflow: visible; transform: translateY(7%); }
-
-/* the bird takes the right half: the longest word of the title must stay clear of its head */
-@media (max-width: 1299px) { .hero__title { font-size: 36px; } }
-
-/* ---------- Embroidery: one pass of the needle on load, then the screen is still ----------
-   Static state is the finished bird; the start state lives only in keyframes,
-   so without animation (reduced motion, old engines) the bird is simply there. */
-.hero__stitches { opacity: 0; fill: none; stroke: var(--white); stroke-width: 2.6; stroke-dasharray: 9 6; stroke-linecap: butt; stroke-linejoin: miter; }
-.hero__needle path { fill: none; stroke: #fff; stroke-width: 14; stroke-linecap: square; stroke-dasharray: 1 1; }
-.hero__list path { stroke: var(--white); stroke-width: 1px; stroke-opacity: 0; stroke-dasharray: 1 1; stroke-linejoin: miter; vector-effect: non-scaling-stroke; }
-.hero__canvas { opacity: 0; }
-@keyframes needle { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-@keyframes fill-in { 0%, 60% { fill-opacity: 0; } 100% { fill-opacity: 1; } }
-@keyframes stitches { 0%, 75% { opacity: 1; } 100% { opacity: 0; } }
-@keyframes canvas { 0% { opacity: 0; } 12%, 70% { opacity: .06; } 100% { opacity: 0; } }
-@keyframes marker {
-  0%   { stroke-dashoffset: 1; stroke-opacity: 1; fill-opacity: 0; }
-  62%  { stroke-dashoffset: 0; stroke-opacity: 1; fill-opacity: 0; }
-  100% { stroke-dashoffset: 0; stroke-opacity: 0; fill-opacity: 1; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero__canvas { animation: canvas 1.4s linear both; }
-  .hero__stitches { animation: stitches 1.4s linear both; }
-  /* the needle runs bottom up: plinth, leg, body, wings, head — the star over the head is the last stitch;
-     each part is filled once its contour is sewn */
-  .hero__needle path { animation: needle .55s cubic-bezier(.4, 0, .2, 1) both; }
-  .hero__fill { animation: fill-in .9s linear both; }
-  .hero__needle path:nth-of-type(2), .hero__fill:nth-of-type(1) { animation-delay: .05s; }
-  .hero__needle path:nth-of-type(3), .hero__fill:nth-of-type(3) { animation-delay: .1s; }
-  .hero__needle path:nth-of-type(4), .hero__fill:nth-of-type(4) { animation-delay: .18s; }
-  .hero__needle path:nth-of-type(5), .hero__fill:nth-of-type(5) { animation-delay: .24s; }
-  .hero__needle path:nth-of-type(6), .hero__fill:nth-of-type(6) { animation-delay: .32s; }
-  .hero__needle path:nth-of-type(7), .hero__fill:nth-of-type(7) { animation-delay: .44s; }
-  /* the list markers are the same star in small: stitched with the same needle, top down */
-  .hero__list path { animation: marker .7s cubic-bezier(.4, 0, .2, 1) both; }
-  .hero__list li:nth-child(1) path { animation-delay: .3s; }
-  .hero__list li:nth-child(2) path { animation-delay: .36s; }
-  .hero__list li:nth-child(3) path { animation-delay: .42s; }
-  .hero__list li:nth-child(4) path { animation-delay: .48s; }
-  .hero__list li:nth-child(5) path { animation-delay: .54s; }
-}
-
-/* Focus is a running stitch, not a glow: the same line the bird was sewn with */
-:focus-visible { outline: 2px dashed var(--accent); outline-offset: 4px; }
-.hero :focus-visible, .footer :focus-visible { outline-color: var(--white); }
+.hero__list svg { flex: 0 0 16px; width: 16px; height: 16px; }
+.hero__cta { margin-top: 60px; }
+.hero__art { display: flex; justify-content: center; align-items: center; }
+.hero__art svg { width: 480px; height: auto; }
 
 /* ---------- Sections ---------- */
 .section { padding-top: 32px; padding-bottom: 120px;}
@@ -171,7 +123,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .form { display: grid; gap: 12px; padding: 20px 20px 32px; }
 .form__fields { display: grid; gap: 12px; }
 .field { display: grid; gap: 2px; padding: 10px 20px 12px; border-radius: 12px; background: var(--field); }
-.field:focus-within { outline: 2px dashed var(--accent); outline-offset: -5px; }
+.field:focus-within { box-shadow: inset 0 0 0 2px var(--accent); }
 .form input, .form textarea { width: 100%; padding: 0; border: 0; background: transparent; font: 400 18px/1.5 var(--font-text); }
 /* the whole field lights up instead, so the native ring inside the plate would be a second border */
 .form input:focus, .form textarea:focus { outline: none; }
@@ -250,21 +202,19 @@ html:has(> body.page) { scroll-padding-top: 140px; }
   .chip { font-size: 16px; }
   /*.hero__grid { padding-top: 140px; }*/
   .hero__title { font-size: 36px; }
+  .hero__art svg { width: 380px; }
   .card { height: 500px; }
   .contact__grid { grid-template-columns: 1fr 1fr; }
   .footer .wrap { flex-direction: column; align-items: flex-start; gap: 20px;}
 }
 @media (max-width: 959px) {
   .h3 { font-size: 22px; }
-  /* phone poster: the caption first, the bird under it, cut by the bottom edge */
-  .hero { min-height: 0; }
-  .hero__grid { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 0; }
+  .hero { padding-bottom: 80px; }
+  .hero__grid { grid-template-columns: 1fr; padding-top: 48px;}
   .hero__title { max-width: none;}
-  .hero__art { position: relative; right: auto; justify-self: end; height: var(--bird-cut); margin: 40px var(--gutter) 0 0; overflow: hidden; }
-  .hero__art svg { --w: min(78vw, 480px); width: var(--w); transform: none; }
-  .hero { --bird-cut: calc(min(78vw, 480px) * 1.183 * .8); }
+  .hero__art { display: none; }
   .nav a:not(.btn) { display: none; }
-  .hero__list { padding-top: 32px; }
+  .hero__list { margin-top: 32px; }
   .hero__cta { margin-top: 48px; }
   /*.h3 { font-size: 28px; }*/
   .ai__grid { grid-template-columns: 1fr; }
@@ -285,7 +235,7 @@ html:has(> body.page) { scroll-padding-top: 140px; }
   .h3 { font-size: 22px; }
   .lead, .page ul, .page ol { font-size: 18px; }
   .header { padding: 16px 0; }
-  .hero { margin-bottom: 80px; }
+  .hero { padding-bottom: 60px; margin-bottom: 80px; }
   .hero__grid { padding-top: 56px; }
   .hero__title { font-size: 30px; }
   .hero__list li { font-size: 16px; }
@@ -315,4 +265,26 @@ html:has(> body.page) { scroll-padding-top: 140px; }
   .card { height: 400px; }
   .hero__title { font-size: 20px; }
   .hero__list li { font-size: 14px; }
+}
+
+/* ---------- Embroidery: the bird is sewn once per session, then it is still ----------
+   Static state is the finished bird; the start state lives only in keyframes behind .sew,
+   so without JS, on a repeat visit or with reduced motion the bird is simply there. */
+.hero__stitches { opacity: 0; fill: none; stroke: var(--white); stroke-width: 2.6; stroke-dasharray: 9 6; stroke-linecap: butt; stroke-linejoin: miter; }
+.hero__needle path { fill: none; stroke: #fff; stroke-width: 14; stroke-linecap: square; stroke-dasharray: 1 1; }
+@keyframes needle { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes fill-in { 0%, 60% { fill-opacity: 0; } 100% { fill-opacity: 1; } }
+@keyframes stitches { 0%, 75% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .sew .hero__stitches { animation: stitches 1.3s linear both; }
+  /* the needle runs bottom up: plinth, leg, body, wings, head, the star over the head is the last stitch;
+     each part is filled once its contour is sewn */
+  .sew .hero__needle path { animation: needle .55s cubic-bezier(.4, 0, .2, 1) both; }
+  .sew .hero__fill { animation: fill-in .82s linear both; }
+  .sew .hero__needle path:nth-of-type(2), .sew .hero__fill:nth-of-type(1) { animation-delay: .05s; }
+  .sew .hero__needle path:nth-of-type(3), .sew .hero__fill:nth-of-type(3) { animation-delay: .1s; }
+  .sew .hero__needle path:nth-of-type(4), .sew .hero__fill:nth-of-type(4) { animation-delay: .18s; }
+  .sew .hero__needle path:nth-of-type(5), .sew .hero__fill:nth-of-type(5) { animation-delay: .24s; }
+  .sew .hero__needle path:nth-of-type(6), .sew .hero__fill:nth-of-type(6) { animation-delay: .32s; }
+  .sew .hero__needle path:nth-of-type(7), .sew .hero__fill:nth-of-type(7) { animation-delay: .44s; }
 }

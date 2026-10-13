@@ -1,0 +1,123 @@
+/* case-reading: case pages set like a book. Loaded only by the 7 case pages, on top of styles.css.
+   One text column (measure ≈ 64 characters of Onest), plates (images) keep the full width of .wrap.
+   Every text block is trimmed to cap height / baseline, so the spacing tokens below ARE the visible gaps.
+   Fluid sizes run linearly from 390px to 1440px viewport and stop there. */
+
+/* Arial with metrics bent to Onest / ANS: same average width of Russian text, same ascent/descent,
+   so the swap after the webfont arrives does not reflow lines. Numbers: fontTools over assets/fonts. */
+@font-face { font-family: "Onest Fallback"; src: local("Arial"), local("ArialMT");
+  size-adjust: 103.6%; ascent-override: 93.6%; descent-override: 29.4%; line-gap-override: 0%; }
+@font-face { font-family: "ANS Fallback"; src: local("Arial"), local("ArialMT");
+  size-adjust: 131.7%; ascent-override: 75.9%; descent-override: 15.2%; line-gap-override: 0%; }
+
+/* ANS sets USE_TYPO_METRICS (ascent .8) but Chrome and Safari on macOS take hhea (ascent 1.0): pin hhea for every
+   engine, so the metric trim below puts capitals where text-box does. Same file, cached with styles.css. */
+@font-face { font-family: ANS; src: url("/assets/fonts/ANS-Regular.woff") format("woff"); font-weight: 300 400; font-display: swap;
+  ascent-override: 100%; descent-override: 20%; line-gap-override: 0%; }
+
+.page {
+  --font-display: ANS, "ANS Fallback", Arial, sans-serif;
+  --font-text: Onest, "Onest Fallback", Arial, sans-serif;
+
+  /* type scale, 390 → 1440 */
+  --fs-body: clamp(1.125rem, 1.0554rem + 0.2857vw, 1.3125rem);  /* 18 → 21 */
+  --fs-dek:  clamp(1.25rem, 1.1107rem + 0.5714vw, 1.625rem);     /* 20 → 26 */
+  --fs-h2:   clamp(1.5625rem, 1.3071rem + 1.0476vw, 2.25rem);    /* 25 → 36: «Административная» fits 350px */
+  --fs-h1:   clamp(1.75rem, 1.1rem + 2.6667vw, 3.5rem);          /* 28 → 56: «при Президенте РФ» (12.3em, unbreakable) fits 350px */
+
+  /* measure: Onest averages 0.53em per character of Russian text (the CSS ch unit is the wide "0", 0.665em) */
+  --measure: calc(var(--fs-body) * 34);
+  --inset: 0px;                       /* extra side padding of the text column on phones */
+
+  /* rhythm: one unit = one line of body text */
+  --rl: calc(var(--fs-body) * 1.55);
+  --s-tile: calc(var(--rl) * .5);     /* plate ↔ plate */
+  --s-list: calc(var(--rl) * .25);    /* item ↔ item */
+  --s-head: calc(var(--rl) * .75);    /* heading ↔ its text */
+  --s-para: var(--rl);                /* paragraph ↔ paragraph, title ↔ dek */
+  --s-plate: calc(var(--rl) * 1.5);   /* text ↔ plate */
+  --s-open: calc(var(--rl) * 2);      /* header ↔ title, dek ↔ cover */
+  --s-section: calc(var(--rl) * 3);   /* chapter ↔ chapter */
+}
+@media (max-width: 639px) { .page { --inset: 12px; } }
+
+/* ---------- Text styles ---------- */
+.page .rec :is(h1, h2, p, ul, ol) {
+  width: min(var(--measure), 100% - 2 * var(--inset));
+  margin: 0 auto;
+  font-family: var(--font-text); font-weight: 400; font-size: var(--fs-body);
+  line-height: var(--L); --L: 1.55;
+  --A: .97; --D: .305; --cap: .707;   /* Onest, units per em */
+  text-wrap: pretty; hanging-punctuation: first allow-end;
+}
+.page .rec .h1 { font: 400 var(--fs-h1)/var(--L) var(--font-display); --L: 1.06; }
+/* the title starts on the column's left edge but may run into the right margin: up to 19em, which keeps
+   the long names at three lines on a laptop (НЦИП: «Национальный центр / исторической памяти / при Президенте РФ») */
+.page .rec .g > .h1 {
+  align-self: stretch; width: auto; max-width: 19em;
+  margin-left: max(var(--inset), (100% - var(--measure)) / 2); margin-right: var(--inset);
+}
+.page .rec .h2 { font: 400 var(--fs-h2)/var(--L) var(--font-display); --L: 1.15; }
+.page .rec :is(.h1, .h2) { --A: 1; --D: .2; --cap: .7; text-wrap: balance; }   /* ANS, pinned above */
+.page .rec .h1 + .lead { font-size: var(--fs-dek); --L: 1.4; }
+.page .rec p:empty { display: none; }  /* <p><ul>…</ul></p> in the source leaves empty paragraphs around lists */
+
+.page .rec :is(ul, ol) { padding-left: 0; list-style-position: outside; }   /* markers hang in the margin */
+.page .rec li + li { margin-top: var(--s-list); }
+@media (max-width: 639px) { .page .rec :is(ul, ol) { padding-left: 1.15em; } }
+
+/* Trim the half-leading above capitals and below the baseline. */
+@supports (text-box: trim-both cap alphabetic) {
+  .page .rec :is(h1, h2, p, ul, ol) { text-box: trim-both cap alphabetic; }
+}
+@supports not (text-box: trim-both cap alphabetic) {
+  /* Capsize: the same trim from font metrics, 0 bytes at runtime */
+  .page .rec :is(h1, h2, p, ul, ol)::before,
+  .page .rec :is(h1, h2, p, ul, ol)::after { content: ""; display: table; }
+  .page .rec :is(h1, h2, p, ul, ol)::before { margin-bottom: calc(((var(--A) + var(--D) - var(--L)) / 2 - (var(--A) - var(--cap))) * 1em); }
+  .page .rec :is(h1, h2, p, ul, ol)::after  { margin-top: calc(((var(--A) + var(--D) - var(--L)) / 2 - var(--D)) * 1em); }
+}
+
+/* ---------- Rhythm: inline gaps, paddings and spacers of the Tilda export give way to the tokens ---------- */
+.page .rec { padding: 0 !important; }
+.page .rec .g { gap: 0 !important; padding: 0 !important; }
+.page .rec .g[style*="flex-direction:row"] { gap: var(--s-tile) !important; }
+.page .sp[style*="height:60px"] { height: var(--s-section) !important; }
+.pill-header + .rec { padding-top: var(--s-open) !important; }
+
+/* inside a text group */
+.page .rec .g > * + :is(p, ul, ol) { margin-top: var(--s-para); }
+.page .rec .g > p:not(:empty) + :is(ul, ol) { margin-top: var(--s-head); }
+.page .rec .g > :is(.h1, .h2) + :is(p, ul, ol),
+.page .rec .g > .h2 + p:empty + :is(ul, ol) { margin-top: var(--s-head); }
+.page .rec .g > .h1 + .lead { margin-top: calc(var(--rl) * 1.25); }  /* the title sets big: its dek needs a bit more air than a paragraph */
+
+/* text group ↔ plates */
+.page .rec .g > .g:not([style*="flex-direction:row"]) + :is(img, .g[style*="flex-direction:row"]) { margin-top: var(--s-plate); }
+.page .rec .g > .g:has(> .h2:only-child) + img { margin-top: var(--s-para); }
+.page .rec .g > .g:has(> .h1) + img { margin-top: var(--s-open); }
+.page .rec .g > :is(img, .g[style*="flex-direction:row"]) + :is(img, .g[style*="flex-direction:row"]) { margin-top: var(--s-tile); }
+
+/* sections that continue the previous one without a spacer */
+.page .rec + .rec { margin-top: var(--s-tile); }
+.page .rec + .rec:has(> .wrap > .g > .g:first-child:not([style*="flex-direction:row"])),
+.page .rec:has(.g[style*="background"]) + .rec { margin-top: var(--s-plate); }
+
+/* «Результат»: the white card keeps its look, its text stays on the column */
+.page .rec .g[style*="background"] {
+  --pad: calc(var(--rl) * 1.5);
+  width: min(var(--measure) + 2 * var(--pad), 100%);
+  margin-inline: auto;
+  padding: var(--pad) !important;
+}
+.page .rec .g[style*="background"] > * { width: 100%; }
+@media (max-width: 639px) {
+  .page .rec .g[style*="background"] { --pad: var(--inset); padding-block: var(--rl) !important; }
+}
+
+/* ---------- Zoom (medium-zoom): paper overlay over the page, nothing else ---------- */
+.medium-zoom-overlay, .medium-zoom-image--opened { z-index: 10000; }
+@media (prefers-reduced-motion: reduce) {
+  /* not 0: medium-zoom waits for transitionend to put the picture back */
+  html .medium-zoom-image, html .medium-zoom-overlay { transition-duration: .01ms !important; }
+}

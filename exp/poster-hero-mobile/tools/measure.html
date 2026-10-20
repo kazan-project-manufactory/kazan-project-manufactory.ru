@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<title>poster-hero-mobile: замер</title>
+<style>
+@font-face { font-family: ANS; src: url("/assets/fonts/ANS-Regular.woff") format("woff"); font-weight: 400; }
+body { font: 14px/1.4 monospace; margin: 16px; }
+.probe { font: 400 100px/1 ANS; text-transform: uppercase; white-space: nowrap; position: absolute; left: -9999px; }
+</style></head>
+<body>
+<pre id="out">…</pre>
+<script type="module">
+// Инструмент разработки, в страницу не подключается.
+// pretext (prepareWithSegments + measureNaturalWidth/measureLineStats) меряет строки заголовка
+// по метрикам ANS через canvas; DOM-span — контрольная сверка, что шрифт действительно подхватился.
+import { prepareWithSegments, measureNaturalWidth, measureLineStats, walkLineRanges } from './vendor/pretext/dist/layout.js';
+
+const P = new URLSearchParams(location.search);
+const LS_EM = parseFloat(P.get('ls') || '0');            // трекинг капса, em
+const SAFE = parseFloat(P.get('safe') || '0.98');        // запас на субпиксели
+const LINES = (P.get('lines') || 'ПРОФЕССИОНАЛЬНЫЕ|ИНТЕРНЕТ РЕШЕНИЯ|ДЛЯ ГОСУДАРСТВА|И БИЗНЕСА').split('|');
+const WIDTHS = [320, 360, 375, 390, 414, 430, 480, 640, 768, 959];
+const gutter = w => (w <= 639 ? 8 : 20);
+
+await document.fonts.load('400 100px ANS');
+const fontOk = document.fonts.check('400 100px ANS');
+const FONT = '400 100px ANS';
+
+const rows = [];
+const w100 = {};
+for (const line of LINES) {
+  const prep = prepareWithSegments(line, FONT, { letterSpacing: LS_EM * 100 });
+  const pw = measureNaturalWidth(prep);
+  const span = document.createElement('span');
+  span.className = 'probe'; span.style.letterSpacing = LS_EM + 'em'; span.textContent = line;
+  document.body.appendChild(span);
+  const dw = span.getBoundingClientRect().width;
+  w100[line] = { pretext: pw, dom: dw };
+}
+const widest = Math.max(...LINES.map(l => w100[l].pretext));
+const widestLine = LINES.find(l => w100[l].pretext === widest);
+const whole = LINES.join(' ');
+const out = { fontOk, ls: LS_EM, safe: SAFE, w100, widestLine, emPerLine: widest / 100, table: [] };
+for (const vw of WIDTHS) {
+  const avail = vw - 2 * gutter(vw);
+  const fs = Math.floor(avail / widest * 100 * SAFE * 10) / 10;
+  // проверка: заголовок с ручными переносами — каждая строка влезает в avail одной строкой
+  const fits = LINES.every(l => {
+    const p = prepareWithSegments(l, `400 ${fs}px ANS`, { letterSpacing: LS_EM * fs });
+    return measureLineStats(p, avail).lineCount === 1;
+  });
+  // и без ручных переносов: сколько строк дал бы обычный перенос
+  const pw = prepareWithSegments(whole, `400 ${fs}px ANS`, { letterSpacing: LS_EM * fs });
+  const free = []; walkLineRanges(pw, avail, ln => free.push(Math.round(ln.width)));
+  out.table.push({ vw, avail, fs, fits, freeLines: free.length });
+}
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+window.__result = out;
+</script>
+</body></html>

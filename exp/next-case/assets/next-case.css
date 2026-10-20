@@ -1,0 +1,72 @@
+/* «Следующий проект» — финальный экран кейса: следующая карточка портфолио, выросшая почти на весь экран.
+   Базовые стили = конечное состояние; движение только в @supports + no-preference. */
+
+.next { padding: 40px 0 120px; }
+.next .wrap { display: grid; gap: 20px; }
+
+.next__card {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: start;
+  /* почти весь экран под плавающей пилюлей шапки кейса */
+  height: clamp(560px, calc(100svh - 156px), 860px);
+  border-radius: var(--radius); border: 1px solid #dbdbdb;
+  background: var(--next-bg, #1e1e1e); color: var(--white);
+  box-shadow: var(--shadow);
+  view-timeline: --next block;
+}
+.next__text { position: relative; z-index: 1; display: grid; gap: 24px; justify-items: start; padding: 48px 24px 48px 48px; }
+.next__label { opacity: .8; }
+.next__title { max-width: 720px; font: 400 56px/1.05 var(--font-display); text-wrap: pretty; }
+.next__lead { max-width: 560px; font: 300 22px/1.4 var(--font-display); opacity: .9; }
+.next__card .chips { margin-top: 8px; }
+
+/* обложка как на карточке главной: во всю ширину своей колонки, низ к низу, прозрачный верх уходит за край */
+.next__cover { position: absolute; right: 0; bottom: 0; width: 54%; aspect-ratio: 1; max-height: 100%; display: flex; align-items: flex-end; }
+.next__img { width: 100%; height: auto; transform-origin: 50% 100%; transition: scale .4s ease; }
+.next__card:hover .next__img { scale: 1.04; }
+
+.next__prev { justify-self: start; padding: 4px 0; font: 300 18px/1.5 var(--font-display); color: var(--ink); opacity: .7; transition: color .2s, opacity .2s; }
+.next__prev:hover { color: var(--accent); opacity: 1; }
+.next__card:focus-visible, .next__prev:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .next__img {
+      animation: next-rise linear both;
+      animation-timeline: --next;
+      animation-range: entry 0% entry 100%;
+    }
+    .next__text {
+      animation: next-in linear both;
+      animation-timeline: --next;
+      animation-range: entry 35% entry 100%;
+    }
+  }
+}
+@keyframes next-rise { from { transform: translateY(65%); } }
+@keyframes next-in { from { opacity: 0; transform: translateY(40px); } }
+
+@media (max-width: 1199px) {
+  .next__title { font-size: 40px; }
+  .next__cover { width: 48%; }
+  .next__lead { font-size: 20px; }
+  .next__card:hover .next__img { scale: none; }
+}
+@media (max-width: 959px) {
+  .next__card { display: flex; flex-direction: column; height: auto; min-height: min(calc(100svh - 120px), 820px); }
+  .next__text { padding: 32px 32px 0; gap: 20px; }
+  .next__cover { position: relative; width: 100%; margin-top: auto; align-self: end; max-height: none; }
+}
+@media (max-width: 639px) {
+  .next { padding: 24px 0 80px; }
+  .next__text { padding: 20px 16px 0; gap: 16px; }
+  .next__title { font-size: 30px; }
+  .next__lead { font-size: 17px; }
+  .next__prev { font-size: 16px; }
+}
+@media (max-width: 479px) {
+  .next__title { font-size: 26px; }
+}
+@media (max-width: 359px) {
+  .next__title { font-size: 22px; }
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<style>:root[data-theme=dark]{color-scheme:dark}:root[data-theme=light]{color-scheme:light}</style>
+<script>/* ink-dark: ?theme=dark|light, then the saved choice, else the system */(function(){var k='ink-dark-theme',t=null;try{t=new URLSearchParams(location.search).get('theme')}catch(e){}if(t==='dark'||t==='light'){try{localStorage.setItem(k,t)}catch(e){}}else{t=null;try{t=localStorage.getItem(k)}catch(e){}}if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)})();</script>
+<title>Политика обработки персональных данных</title>
+<link rel="canonical" href="https://kazan-project-manufactory.ru/privacypolicy/">
+<meta http-equiv="refresh" content="0; url=/exp/ink-dark/privacypolicy/">
+</head>
+<body>
+<p>Политика обработки персональных данных переехала на <a href="/exp/ink-dark/privacypolicy/">/privacypolicy/</a>.</p>
+<style>.exp-badge{position:fixed;left:16px;bottom:16px;z-index:9999;max-width:calc(100vw - 32px);display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;border-radius:50px;background:#1e1e3d;color:#fff;font:400 13px/1.2 Onest,Arial,sans-serif;box-shadow:var(--badge-ring,0 6px 20px rgba(30,30,61,.25))}.exp-badge a{color:inherit;text-decoration:none;padding:2px 0}.exp-badge a:hover{text-decoration:underline}.exp-theme{flex:none;display:flex;padding:2px;border-radius:50px;background:rgba(255,255,255,.12)}.exp-theme[hidden]{display:none}.exp-theme button{padding:4px 10px;border:0;border-radius:50px;background:none;color:inherit;font:inherit;cursor:pointer}.exp-theme button[aria-pressed=true]{background:#ebecf5;color:#1e1e3d}</style>
+<div class="exp-badge"><a href="/privacy/" title="Открыть оригинал">🧪 эксперимент «ink-dark» · оригинал →</a><span class="exp-theme" role="group" aria-label="Тема" hidden><button type="button" data-t="light">светлая</button><button type="button" data-t="dark">тёмная</button></span></div>
+<script>(function(){var k='ink-dark-theme',d=document.documentElement,w=document.querySelector('.exp-theme');if(!w)return;var mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;function cur(){return d.getAttribute('data-theme')||(mq&&mq.matches?'dark':'light')}function sync(){var c=cur();w.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-t')===c?'true':'false')})}w.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var t=b.getAttribute('data-t');d.setAttribute('data-theme',t);try{localStorage.setItem(k,t)}catch(_){}try{var u=new URL(location.href);if(u.searchParams.has('theme')){u.searchParams.set('theme',t);history.replaceState(null,'',u)}}catch(_){}sync()});if(mq&&mq.addEventListener)mq.addEventListener('change',sync);w.hidden=false;sync()})();</script>
+</body>
+</html>
